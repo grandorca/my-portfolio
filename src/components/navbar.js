@@ -14,7 +14,7 @@ class First {
 
 function NavBar() {
   let second = {
-    img: "https://picsum.photos/300",
+    img: "https://picsum.photos/100",
   };
   const obj = new First();
   return (
