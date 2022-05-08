@@ -17,7 +17,7 @@ function removeOne() {
   return console.log(state.count);
 }
 
-function Hello(props) {
+function Buttons(props) {
   return (
     <div>
       <div className="title">
@@ -46,4 +46,4 @@ function Hello(props) {
     </div>
   );
 }
-export default Hello;
+export default Buttons;
