@@ -1,25 +1,30 @@
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Header from "./Header";
-import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
+import "./index.css";
 
 const root = createRoot(document.querySelector("#root"));
 root.render(
   <StrictMode>
-    <Header></Header>
+    <div id="dark">
+      <Router>
+        <Header></Header>
 
-    <BrowserRouter basename="/moohka">
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-      </Switch>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path=":wrongAddress" element={<NotFound />} />
+        </Routes>
 
-    <Footer></Footer>
+        <Footer></Footer>
+      </Router>
+    </div>
   </StrictMode>
 );
