@@ -12,7 +12,7 @@ import "./index.css";
 const root = createRoot(document.querySelector("#root"));
 root.render(
   <StrictMode>
-    <div id="dark">
+    <div className="not-footer">
       <Router>
         <Header></Header>
 
@@ -20,11 +20,10 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path=":wrongAddress" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-
-        <Footer></Footer>
       </Router>
     </div>
+    <Footer></Footer>
   </StrictMode>
 );

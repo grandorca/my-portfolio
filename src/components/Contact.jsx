@@ -1,16 +1,12 @@
 const Contact = () => {
   return (
-    <div className="contact">
+    <div className="main" id="contact">
       <h2>Contact</h2>
       <p>
         Phone Number: 204-123-1234
         <br />
         Location: Winnipeg, Canada
         <br />
-        <div id="test1">
-          <h1 id="test-h1"></h1>
-          <div id="test2"></div>
-        </div>
         <br />
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
         similique possimus fuga est facilis alias eum itaque, debitis voluptatum

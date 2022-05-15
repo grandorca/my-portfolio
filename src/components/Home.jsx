@@ -1,9 +1,6 @@
 import { useState, useRef } from "react";
 
 const Home = () => {
-  // let state = {
-  //   count: 100,
-  // };
   const [count, setCount] = useState(0);
   const [output, setOutput] = useState();
   const formatCount = () => {
@@ -13,8 +10,9 @@ const Home = () => {
     return output === "" || output == null ? "Output display here" : output;
   };
   const inputField = useRef();
+
   return (
-    <div className="home">
+    <div className="main" id="home">
       <h2>Home</h2>
       <h3>Count: {formatCount()}</h3>
       <button id="decrementButton" onClick={() => setCount(count - 1)}>
@@ -44,9 +42,6 @@ const Home = () => {
           clear
         </button>
         <p id="output">{formatOutput()}</p>
-      </div>
-      <div id="sections">
-        <section>1</section>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const Header = () => {
       </header>
       <nav className="navbar">
         <ul className="navbar-list">
-          <li className="navbar-item" id="nav-leftend">
+          <li className="navbar-item">
             <Link to="./">Home</Link>
           </li>
           <li className="navbar-item">
@@ -33,8 +33,6 @@ const Header = () => {
           </div>
         </ul>
       </nav>
-
-      <div id="somespace"></div>
     </>
   );
 };
