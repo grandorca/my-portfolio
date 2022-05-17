@@ -15,24 +15,24 @@ const Home = () => {
     <div className="main" id="home">
       <h2>Home</h2>
       <h3>Count: {formatCount()}</h3>
-      <button id="decrementButton" onClick={() => setCount(count - 1)}>
+      <button id="decrement-button" onClick={() => setCount(count - 1)}>
         Decrement
       </button>
-      <button id="incrementButton" onClick={() => setCount(count + 1)}>
+      <button id="increment-button" onClick={() => setCount(count + 1)}>
         Increment
       </button>
-      <button id="resetButton" onClick={() => setCount(0)}>
+      <button id="reset-button" onClick={() => setCount(0)}>
         Reset
       </button>
-      <div id="somespace"></div>
+      <div id="some-space"></div>
       <div>
         <input
-          id="inputField"
+          id="input-field"
           ref={inputField}
           onChange={(event) => setOutput(event.target.value)}
         ></input>
         <button
-          id="clearButton"
+          id="clear-button"
           onClick={(event) => {
             setOutput(event.target.value);
             inputField.current.value = "";
@@ -41,7 +41,9 @@ const Home = () => {
         >
           clear
         </button>
-        <p id="output">{formatOutput()}</p>
+        <output id="output1">{formatOutput()}</output>
+        <br/>
+        <output id="output2">____________</output>
       </div>
     </div>
   );
