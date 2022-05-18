@@ -35,25 +35,36 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
   });
 
-  //theme-change
-  function lightTheme(){
-    document.documentElement.style.setProperty("--theme-background","#ffffff");
-    document.documentElement.style.setProperty("--theme-color","#ffffff");
-    document.documentElement.style.setProperty("--theme-font","#000000");
-    document.documentElement.style.setProperty("--theme-sub-font","#5C5C5C");
-    document.documentElement.style.setProperty("--theme-border","#000000");
-    document.documentElement.style.setProperty("--theme-border-radius","0px");
+  //theme-change & browser favicon
+  const favicon = document.querySelector("#favicon");
+  function lightTheme() {
+    document.documentElement.style.setProperty("--theme-background", "#ffffff");
+    document.documentElement.style.setProperty("--theme-color", "#ffffff");
+    document.documentElement.style.setProperty("--theme-font", "#000000");
+    document.documentElement.style.setProperty("--theme-font-sub", "#5C5C5C");
+    document.documentElement.style.setProperty("--theme-border-color", "#000000");
+    document.documentElement.style.setProperty("--theme-border-radius", "0px");
+    document.documentElement.style.setProperty(
+      "--theme-font-family",
+      "georgia"
+    );
+    document.documentElement.style.setProperty("--theme-switch", "left");
 
+    favicon.href = "./favicon_white.png";
   }
-  function darkTheme(){
-    document.documentElement.style.setProperty("--theme-background","#212121");
-    document.documentElement.style.setProperty("--theme-color","#181818");
-    document.documentElement.style.setProperty("--theme-font","#ffffff");
-    document.documentElement.style.setProperty("--theme-sub-font","#c8c8c8");
-    document.documentElement.style.setProperty("--theme-border","#181818");
-    document.documentElement.style.setProperty("--theme-border-radius","10px");
+  function darkTheme() {
+    document.documentElement.style.setProperty("--theme-background", "#212121");
+    document.documentElement.style.setProperty("--theme-color", "#181818");
+    document.documentElement.style.setProperty("--theme-font", "#ffffff");
+    document.documentElement.style.setProperty("--theme-font-sub", "#c8c8c8");
+    document.documentElement.style.setProperty("--theme-border-color", "#181818");
+    document.documentElement.style.setProperty("--theme-border-radius", "10px");
+    document.documentElement.style.setProperty("--theme-font-family", "arial");
+    document.documentElement.style.setProperty("--theme-switch", "right");
 
+    favicon.href = "./favicon_black.png";
   }
+
   return (
     <>
       <header>

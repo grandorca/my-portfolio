@@ -42,9 +42,9 @@ const Home = () => {
           clear
         </button>
         <output id="output1">{formatOutput()}</output>
-        <br/>
-        <output id="output2">____________</output>
+        
       </div>
+      <input type ="range" min="0" max="100"></input>
     </div>
   );
 };
