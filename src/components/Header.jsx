@@ -1,7 +1,12 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   //browser-title-change
   const [title, setTitle] = useState("My Portfolio");
   useEffect(() => {
@@ -42,27 +47,37 @@ const Header = () => {
     document.documentElement.style.setProperty("--theme-color", "#ffffff");
     document.documentElement.style.setProperty("--theme-font", "#000000");
     document.documentElement.style.setProperty("--theme-font-sub", "#5C5C5C");
-    document.documentElement.style.setProperty("--theme-border-color", "#000000");
+    document.documentElement.style.setProperty(
+      "--theme-border-color",
+      "#000000"
+    );
     document.documentElement.style.setProperty("--theme-border-radius", "0px");
     document.documentElement.style.setProperty(
       "--theme-font-family",
       "georgia"
     );
     document.documentElement.style.setProperty("--theme-switch", "left");
+    document.documentElement.style.setProperty("--theme-background-div", "#ffffff");
 
-    favicon.href = "./favicon_white.png";
+
+    favicon.href = "./favicon-white.png";
   }
   function darkTheme() {
     document.documentElement.style.setProperty("--theme-background", "#212121");
     document.documentElement.style.setProperty("--theme-color", "#181818");
     document.documentElement.style.setProperty("--theme-font", "#ffffff");
     document.documentElement.style.setProperty("--theme-font-sub", "#c8c8c8");
-    document.documentElement.style.setProperty("--theme-border-color", "#181818");
+    document.documentElement.style.setProperty(
+      "--theme-border-color",
+      "#212121"
+    );
     document.documentElement.style.setProperty("--theme-border-radius", "10px");
     document.documentElement.style.setProperty("--theme-font-family", "arial");
     document.documentElement.style.setProperty("--theme-switch", "right");
+    document.documentElement.style.setProperty("--theme-background-div", "#262626");
 
-    favicon.href = "./favicon_black.png";
+
+    favicon.href = "./favicon-black.png";
   }
 
   return (

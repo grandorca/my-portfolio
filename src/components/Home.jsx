@@ -1,50 +1,45 @@
-import { useState, useRef } from "react";
-
 const Home = () => {
-  const [count, setCount] = useState(0);
-  const [output, setOutput] = useState();
-  const formatCount = () => {
-    return count === 0 ? "Zero" : count;
-  };
-  const formatOutput = () => {
-    return output === "" || output == null ? "Output display here" : output;
-  };
-  const inputField = useRef();
-
   return (
     <div className="main" id="home">
-      <h2>Home</h2>
-      <h3>Count: {formatCount()}</h3>
-      <button id="decrement-button" onClick={() => setCount(count - 1)}>
-        Decrement
-      </button>
-      <button id="increment-button" onClick={() => setCount(count + 1)}>
-        Increment
-      </button>
-      <button id="reset-button" onClick={() => setCount(0)}>
-        Reset
-      </button>
-      <div id="some-space"></div>
-      <div>
-        <input
-          id="input-field"
-          ref={inputField}
-          onChange={(event) => setOutput(event.target.value)}
-        ></input>
-        <button
-          id="clear-button"
-          onClick={(event) => {
-            setOutput(event.target.value);
-            inputField.current.value = "";
-            inputField.current.focus();
-          }}
-        >
-          clear
-        </button>
-        <output id="output1">{formatOutput()}</output>
-        
+      <h2 className="heading">Front-end Developer, Software Developer</h2>
+
+      <p>
+        Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
+        you
+      </p>
+      <br></br>
+      <div className="top-div">
+        <div className="small-box">
+          <p>Development Tools</p>
+          <br></br>
+          <ul id="dev-tool">
+            <li>VSCode</li>
+            <li>Eclipse</li>
+            <li>MySQL</li>
+            <li>Terminal</li>
+          </ul>
+        </div>
+        <div className="small-box">
+          <p>Programming Langauges</p>
+          <br></br>
+          <ul id="program-lang">
+            <li></li>
+            <li>asdf</li>
+            <li>zxcv</li>
+            <li>qazw</li>
+          </ul>
+        </div>
       </div>
-      <input type ="range" min="0" max="100"></input>
+
+      <div className="mid-div">
+        <h2>My Projects</h2>
+        <div className="project-container">
+          <div className="project-element"></div>
+          <div className="project-element"></div>
+          <div className="project-element"></div>
+        </div>
+      </div>
+      <button className="next-button">Next</button>
     </div>
   );
 };
