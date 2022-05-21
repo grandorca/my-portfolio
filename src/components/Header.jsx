@@ -1,21 +1,8 @@
-import { useEffect, useState, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import Home from "./Home";
 
 const Header = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  //browser-title-change
-  const [title, setTitle] = useState("My Portfolio");
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
-  const changeTitle = (event) => {
-    setTitle("My Portfolio | " + event.target.innerHTML);
-  };
-
   //theme-dropdown
   function themeDown() {
     let currentValue = getComputedStyle(
@@ -57,7 +44,9 @@ const Header = () => {
       "georgia"
     );
     document.documentElement.style.setProperty("--theme-switch", "left");
-    document.documentElement.style.setProperty("--theme-background-div", "#ffffff");
+    document.documentElement.style.setProperty("--theme-back-div", "#ffffff");
+    document.documentElement.style.setProperty("--theme-front-div", "#ffffff");
+    document.documentElement.style.setProperty("--theme-back-div-width", "400px");
 
 
     favicon.href = "./favicon-white.png";
@@ -74,9 +63,11 @@ const Header = () => {
     document.documentElement.style.setProperty("--theme-border-radius", "10px");
     document.documentElement.style.setProperty("--theme-font-family", "arial");
     document.documentElement.style.setProperty("--theme-switch", "right");
-    document.documentElement.style.setProperty("--theme-background-div", "#262626");
+    document.documentElement.style.setProperty("--theme-back-div", "#262626");
+    document.documentElement.style.setProperty("--theme-front-div", "#1a1a1a");
+    document.documentElement.style.setProperty("--theme-back-div-width", "auto");
 
-
+    
     favicon.href = "./favicon-black.png";
   }
 
@@ -88,19 +79,13 @@ const Header = () => {
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-item">
-            <Link to="./" onClick={changeTitle}>
-              Home
-            </Link>
+            <Link to="./">Home</Link>
           </li>
           <li className="navbar-item">
-            <Link to="./about" onClick={changeTitle}>
-              About
-            </Link>
+            <Link to="./about">About</Link>
           </li>
           <li className="navbar-item">
-            <Link to="./contact" onClick={changeTitle}>
-              Contact
-            </Link>
+            <Link to="./contact">Contact</Link>
           </li>
           <div
             className="navbar-item"
