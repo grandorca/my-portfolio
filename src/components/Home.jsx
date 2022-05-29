@@ -1,21 +1,41 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import buildingImg from "./visuals/building.jpg";
+import sunSet from "./visuals/sun-set.mp4";
 
 const Home = () => {
-  AOS.init();
+  // // scroll-speed
+  // const [offsetY, setOffsetY] = useState(0);
+  // const handleScroll = () => setOffsetY(window.scrollY);
+
+  //observer
+  const imgRef = useRef();
+  const vidRef = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        entry.target.classList.toggle("show", entry.isIntersecting);
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(imgRef.current);
+    observer.observe(vidRef.current);
+  }, []);
 
   return (
     <div className="main" id="home">
       <h2 className="heading">Front-end Developer, Software Developer</h2>
-      <p id="greeting">
-        Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
-        you
-      </p>
-      <br></br>
+
+      <div>
+        <p id="greeting">
+          Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
+          you
+        </p>
+      </div>
+
       <div className="back-div">
-        <div className="small-box">
+        <div className="back-sub-div">
           <h4>Development Tools</h4>
           <br></br>
           <ul id="dev-tool">
@@ -25,11 +45,11 @@ const Home = () => {
             <li>GitHub</li>
           </ul>
         </div>
-        <div className="small-box">
+        <div className="back-sub-div">
           <h4>Programming Langauges</h4>
           <br></br>
           <ul id="program-lang">
-            <li>React</li>
+            <li>&#40;React&#41;</li>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -38,16 +58,23 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <div style={{ display: "block" }} data-aos="fade-up">
-        <div className="front-div">
-          <h2>My Projects</h2>
-          <div className="project-container">
-            <div className="project-element" data-aos="fade-up"></div>
-            <div className="project-element" data-aos="fade-up"></div>
-            <div className="project-element" data-aos="fade-up"></div>
-          </div>
-        </div>
+
+      <div className="image-div">
+        <img alt="building" src={buildingImg} ref={imgRef}></img>
+        <div id="visual-by">Photo by Alexander Kozlov from Pexels</div>
       </div>
+
+      <div className="big-space"></div>
+
+      <div className="video-div">
+        <div id="visual-by">Video by Kmeel Stock from Pexels</div>
+        <video autoPlay muted loop ref={vidRef}>
+          <source src={sunSet} type="video/mp4"></source>
+        </video>
+      </div>
+
+      <div className="small-space"></div>
+
       <Link className="next-anchor" to="./about">
         <button className="next-button">Next</button>
       </Link>

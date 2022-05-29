@@ -1,24 +1,21 @@
 import { Link } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const About = () => {
-  AOS.init();
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((data) => {console.log(data[2].company.name)})
+    .catch((error) => {
+      console.log(error);
+    });
 
+  const aboutMe = "qwer\nasdf\nzxcv";
   return (
     <div className="main" id="about">
       <h2>About Me</h2>
       <div className="back-div">
-        <p>
-          I started doing software development.
-          <br></br>I change my path to software engineering
-          <br></br>
-          front-end development
-          <br></br>
-          from where
-          <br></br>
-          to the top
-        </p>
+        <pre>qwer asdf zxcsdfsd fv</pre>
+        <pre>{aboutMe}</pre>
+        <pre>{"qwer     asdf      zxcv"} </pre>
       </div>
       <div className="center-next-button">
         <Link className="next-anchor" to="/contact">
