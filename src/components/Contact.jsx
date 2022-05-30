@@ -7,7 +7,7 @@ const Contact = () => {
       </div>
       <p> Email: moohka@hotmail.com</p>
       <div className="back-div">
-        <p>Phone: 204-396-6564</p>
+        <p>Phone: 204-***-****</p>
       </div>
       <div className="back-div" id="last-back-div">
         <p>

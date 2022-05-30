@@ -239,7 +239,7 @@ header {
 }
 img {
   transition: opacity 2s ease-out;
-  width: 500px;
+  width: 40vw;
   height: auto;
   opacity: 0;
 }
@@ -253,7 +253,7 @@ img.show {
   margin-right: 8%;
 }
 video {
-  width: 800px;
+  width: 55vw;
   height: auto;
   transition: opacity 2s ease-out;
   opacity: 0;
@@ -380,5 +380,5 @@ footer {
   border-top: 1px solid var(--theme-border-color);
 }
 footer p {
-  font-size: 15px;
+  font-size: 17px;
 }
