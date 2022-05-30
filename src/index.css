@@ -43,7 +43,7 @@ header {
 }
 #title {
   position: relative;
-  margin: 15px 0 16px 30px;
+  margin: 15px 0 15px 30px;
   display: inline-block;
   z-index: 100;
 }
@@ -111,7 +111,7 @@ header {
   border-radius: 50%;
   cursor: pointer;
   background: linear-gradient(90deg, #212121 50%, white 50%);
-  background-size: 200% 200%;
+  background-size: 210% 210%;
   background-position: center;
   transition: all 0.3s ease-out, opacity 0.2s ease;
 }
