@@ -4,10 +4,6 @@ import buildingImg from "./visuals/building.jpg";
 import sunSet from "./visuals/sun-set.mp4";
 
 const Home = () => {
-  // // scroll-speed
-  // const [offsetY, setOffsetY] = useState(0);
-  // const handleScroll = () => setOffsetY(window.scrollY);
-
   //observer
   const imgRef = useRef();
   const vidRef = useRef();
@@ -17,7 +13,7 @@ const Home = () => {
         const entry = entries[0];
         entry.target.classList.toggle("show", entry.isIntersecting);
       },
-      { threshold: 0.25 }
+      { threshold: 0.1 }
     );
     observer.observe(imgRef.current);
     observer.observe(vidRef.current);
@@ -78,6 +74,7 @@ const Home = () => {
       <Link className="next-anchor" to="./about">
         <button className="next-button">Next</button>
       </Link>
+      
     </div>
   );
 };
