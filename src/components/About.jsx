@@ -11,7 +11,7 @@ const About = () => {
         <p>
           &nbsp;When I first started coding...\nLorem ipsum dolor sit amet,
           <br></br>
-          consectetur \nadipiscing elit, sed do eius&#160;mod tempor incid&#160;idunt &#160;ut
+          consectetur \piscing elit, sed do eius&#160;mod tempor incid&#160;idunt &#160;ut
           \nlabore et dolore magna aliqua. Ut enim ad minim veniam, \nquis
           <br></br>
           nostrud exercitation ullamcdddddddddd o labord
