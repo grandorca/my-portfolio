@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
-const About = () => {
-
-  
-
+const About = (props) => {
   return (
     <div className="main" id="about">
       <h2>About Me</h2>
@@ -11,8 +8,9 @@ const About = () => {
         <p>
           &nbsp;When I first started coding...\nLorem ipsum dolor sit amet,
           <br></br>
-          consectetur \piscing elit, sed do eius&#160;mod tempor incid&#160;idunt &#160;ut
-          \nlabore et dolore magna aliqua. Ut enim ad minim veniam, \nquis
+          consectetur \piscing elit, sed do eius&#160;mod tempor
+          incid&#160;idunt &#160;ut \nlabore et dolore magna aliqua. Ut enim ad
+          minim veniam, \nquis
           <br></br>
           nostrud exercitation ullamcdddddddddd o labord
           <br></br>
@@ -25,11 +23,10 @@ const About = () => {
           mollit anim id est laborum.\n"
         </p>
       </div>
-      <div className="center-next-button">
-        <Link className="next-anchor" to="/contact">
-          <button className="next-button">Next</button>
-        </Link>
-      </div>
+
+      <Link className="next-anchor" to="/contact">
+        <button className={`next-button ${props.theme}`}>Next</button>
+      </Link>
     </div>
   );
 };

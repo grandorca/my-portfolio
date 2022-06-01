@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Home from "./Home";
+import {setTheme} from "./App";
 
-const Header = () => {
+const Header = (props) => {
   //theme-dropdown
   function themeDown() {
     let currentValue = getComputedStyle(
       document.documentElement
     ).getPropertyValue("--display-dropdown");
+
     currentValue = currentValue === " none" ? "block" : " none";
+
     document.documentElement.style.setProperty(
       "--display-dropdown",
       currentValue
@@ -27,7 +30,8 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
   });
 
-  //theme-change & browser favicon
+
+  //theme-change & browser-favicon
   const favicon = document.querySelector("#favicon");
   function lightTheme() {
     document.documentElement.style.setProperty("--theme-background", "#ffffff");
@@ -46,9 +50,11 @@ const Header = () => {
     document.documentElement.style.setProperty("--theme-switch", "left");
     document.documentElement.style.setProperty("--theme-back-div", "#ffffff");
     document.documentElement.style.setProperty("--theme-front-div", "#ffffff");
-    document.documentElement.style.setProperty("--theme-back-div-width", "400px");
-
-
+    document.documentElement.style.setProperty(
+      "--theme-back-div-width",
+      "400px"
+    );
+    props.changeTheme("light");
     favicon.href = "./favicon-white.png";
   }
   function darkTheme() {
@@ -65,9 +71,11 @@ const Header = () => {
     document.documentElement.style.setProperty("--theme-switch", "right");
     document.documentElement.style.setProperty("--theme-back-div", "#262626");
     document.documentElement.style.setProperty("--theme-front-div", "#1a1a1a");
-    document.documentElement.style.setProperty("--theme-back-div-width", "auto");
-
-    
+    document.documentElement.style.setProperty(
+      "--theme-back-div-width",
+      "auto"
+    );
+      props.changeTheme("dark");
     favicon.href = "./favicon-black.png";
   }
 

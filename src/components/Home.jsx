@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import buildingImg from "./visuals/building.jpg";
 import sunSet from "./visuals/sun-set.mp4";
 
-const Home = () => {
-  //observer
+const Home = (props) => {
   const imgRef = useRef();
   const vidRef = useRef();
+
+  //observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -69,12 +70,9 @@ const Home = () => {
         </video>
       </div>
 
-      <div className="small-space"></div>
-
-      <Link className="next-anchor" to="./about">
-        <button className="next-button">Next</button>
+      <Link className="next-anchor" to="/about">
+        <button className={`next-button ${props.theme}`}>Next</button>
       </Link>
-      
     </div>
   );
 };
