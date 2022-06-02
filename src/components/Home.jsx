@@ -58,16 +58,33 @@ const Home = (props) => {
 
       <div className="image-div">
         <img alt="building" src={buildingImg} ref={imgRef}></img>
-        <div id="visual-by">Photo by Alexander Kozlov from Pexels</div>
+        <div className="visual-text" id="right-side">
+          <p>
+            Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Provident corporis neque fugiat.
+          </p>
+          <span>Photo by Alexander Kozlov</span>
+        </div>
       </div>
 
       <div className="big-space"></div>
 
       <div className="video-div">
-        <div id="visual-by">Video by Kmeel Stock from Pexels</div>
-        <video autoPlay muted loop ref={vidRef}>
-          <source src={sunSet} type="video/mp4"></source>
-        </video>
+        <div className="visual-text" id="left-side">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta,
+            culpa
+          </p>
+          <span>Video by Kmeel Stock</span>
+        </div>
+        <video
+          autoPlay
+          muted
+          loop
+          ref={vidRef}
+          src={sunSet}
+          type="video/mp4"
+        ></video>
       </div>
 
       <Link className="next-anchor" to="/about">

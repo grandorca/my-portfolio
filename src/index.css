@@ -111,7 +111,7 @@ header {
   border-radius: 50%;
   cursor: pointer;
   background: linear-gradient(90deg, #212121 50%, white 50%);
-  background-size: 210% 210%;
+  background-size: 220% 100%;
   background-position: center;
   transition: all 0.3s ease-out, opacity 0.2s ease;
 }
@@ -237,26 +237,25 @@ header {
 .image-div {
   display: flex;
   align-items: left;
-  margin-left: 8%;
+  margin-left: 7%;
 }
 img {
   transition: opacity 2s ease-out;
-  width: 35vw;
+  width: 30vw;
   height: auto;
   opacity: 0;
   border-radius: var(--theme-border-radius);
 }
 img.show {
-  transform: translateX(0);
   opacity: 1;
 }
 .video-div {
   display: flex;
   justify-content: flex-end;
-  margin-right: 8%;
+  margin-right: 7%;
 }
 video {
-  width: 55vw;
+  width: 50vw;
   height: auto;
   border-radius: var(--theme-border-radius);
   transition: opacity 2s ease-out;
@@ -265,10 +264,21 @@ video {
 video.show {
   opacity: 1;
 }
-#visual-by {
-  display: relative;
-  margin-top: auto;
+.visual-text {
+  width: 45vw;
+  margin: auto;
   font-size: 16px;
+}
+.visual-text#right-side {
+  text-align: left;
+  margin-left: 5vw;
+}
+.visual-text#left-side {
+  text-align: right;
+  margin-right: 5vw;
+}
+.visual-text span {
+  visibility: hidden;
 }
 /*end of visuals*/
 
@@ -343,7 +353,7 @@ video.show {
 
 /*next-button*/
 .next-button {
-  display:block;
+  display: block;
   position: relative;
   margin-top: 140px;
   width: 90px;
@@ -358,7 +368,7 @@ video.show {
 
 /*light*/
 .next-button.light {
-  display:inline-block;
+  display: inline-block;
   background: linear-gradient(
     to bottom,
     var(--theme-font) 40%,
@@ -372,7 +382,6 @@ video.show {
   transition: all 0.3s ease;
   transition-property: color, background-position;
   cursor: pointer;
-
 }
 .next-button.light:hover {
   color: var(--theme-color);
@@ -380,12 +389,12 @@ video.show {
 }
 /*dark*/
 .next-button.dark {
-  display:inline-block;
+  display: inline-block;
   margin: auto;
   margin-top: 140px;
   z-index: 1;
   cursor: pointer;
-  transition: all 0.4s ease-in;
+  transition: all 0.35s ease-in;
   transition-property: color, background-position;
 }
 .next-button.dark::before {
