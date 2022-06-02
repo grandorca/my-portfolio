@@ -110,7 +110,12 @@ header {
   border: 2px solid peru;
   border-radius: 50%;
   cursor: pointer;
-  background: linear-gradient(90deg, #212121 50%, white 50%);
+  background: linear-gradient(
+    90deg,
+    #212121 0%, #212121 50%,
+    white 50%,
+    white 100%
+  );
   background-size: 250% 150%;
   background-position: center;
   transition: all 0.3s ease-out, opacity 0.2s ease;
