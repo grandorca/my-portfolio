@@ -104,7 +104,7 @@ header {
 
 #theme-switch {
   display: inline;
-  min-width: 23px;
+  width: 23px;
   height: 23px;
   transform: translateY(1px);
   border: 2px solid peru;
@@ -116,7 +116,7 @@ header {
     white 50%,
     white 100%
   );
-  background-size: 250% 150%;
+  background-size: 200% 100%;
   background-position: center;
   transition: all 0.3s ease-out, opacity 0.2s ease;
 }
