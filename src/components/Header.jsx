@@ -7,9 +7,7 @@ const Header = (props) => {
     let currentValue = getComputedStyle(
       document.documentElement
     ).getPropertyValue("--display-dropdown");
-
-    currentValue = currentValue === " none" ? "block" : " none";
-
+    currentValue = currentValue !== "block" ? "block" : "none";
     document.documentElement.style.setProperty(
       "--display-dropdown",
       currentValue
