@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import buildingImg from "./visuals/building.jpg";
-import sunSet from "./visuals/sun-set.mp4";
+import wave from "./visuals/beach-wave.mp4";
 
 const Home = (props) => {
+  //observer
   const imgRef = useRef();
   const vidRef = useRef();
-
-  //observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -75,14 +74,14 @@ const Home = (props) => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta,
             culpa
           </p>
-          <span>Video by Kmeel Stock</span>
+          <span>Video by Nothing Ahead from Pexels</span>
         </div>
         <video
           autoPlay
           muted
           loop
           ref={vidRef}
-          src={sunSet}
+          src={wave}
           type="video/mp4"
         ></video>
       </div>
