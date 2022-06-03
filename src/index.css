@@ -404,7 +404,7 @@ video.show {
   background-color: var(--theme-background);
 }
 #thanks {
-  margin-top: 21vh;
+  margin-top: 20vh;
   font-size: larger;
   position: relative;
   bottom: 0;
