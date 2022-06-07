@@ -26,12 +26,14 @@ const Header = (props) => {
     window.addEventListener("resize", handleResize);
   });
 
+  //theme-change-trigger
   function lightTheme() {
     props.changeTheme("light");
   }
   function darkTheme() {
     props.changeTheme("dark");
   }
+  
   return (
     <>
       <header>

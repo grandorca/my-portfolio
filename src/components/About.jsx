@@ -6,13 +6,11 @@ const About = (props) => {
       <h2>About Me</h2>
       <div className="back-div">
         <p>
-          &nbsp;When I first started coding...\nLorem ipsum dolor sit amet,
+          &nbsp;When I first started coding... I started with aviation.
           <br></br>
-          consectetur \piscing elit, sed do eius&#160;mod tempor
-          incid&#160;idunt &#160;ut \nlabore et dolore magna aliqua. Ut enim ad
-          minim veniam, \nquis
+          However, soon after I found that it was not for me.
           <br></br>
-          nostrud exercitation ullamcdddddddddd o labord
+          &nbsp;nostrud exercitation ullamcdddddddddd o labord
           <br></br>
           is nisi ut aliquip ex ea commo do consequat.\n\n Du is aute irure
           dolor in reprehenderit in voluptate

@@ -28,6 +28,8 @@ const Home = (props) => {
           Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
           you
         </p>
+        <p id="intro">I'm an Irish programmer who loves to play around with programming and learning new things.
+        </p>
       </div>
 
       <div className="back-div">
@@ -59,8 +61,7 @@ const Home = (props) => {
         <img alt="building" src={buildingImg} ref={imgRef}></img>
         <div className="visual-text" id="right-side">
           <p>
-            Lorem ipsum dolor sit. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Provident corporis neque fugiat.
+            Concise coding with scructure.
           </p>
           <span>Photo by Alexander Kozlov</span>
         </div>

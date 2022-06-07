@@ -8,6 +8,7 @@
 :root {
   --theme-background: #212121;
   --theme-color: #181818;
+  --theme-color-plus: #111111;
   --theme-less-color: #c8c8c8;
   --theme-font: #ffffff;
   --theme-font-sub: #c8c8c8;
@@ -48,6 +49,7 @@ a {
   align-items: center;
   background-color: var(--theme-back-ground);
   color: var(--theme-font);
+  user-select: none;
 }
 .loading-page p#m {
   font-size: 50px;
@@ -63,10 +65,12 @@ a {
   }
   50% {
     transform: translateY(0px);
-    opacity: 1;
+    opacity: 0.7;
   }
   75% {
-    transform: translateY(0px);
+    opacity: 1;
+  }
+  85% {
     opacity: 1;
   }
   100% {
@@ -78,7 +82,6 @@ a {
   opacity: 0;
   animation: loading-effect-k 1.6s linear forwards 0.3s;
 }
-
 @keyframes loading-effect-k {
   0% {
   }
@@ -87,10 +90,13 @@ a {
     opacity: 0;
   }
   50% {
-  
+    opacity: 0.7;
   }
   75% {
+    opacity: 1;
     transform: translateY(0px);
+  }
+  85% {
     opacity: 1;
   }
   100% {
@@ -98,7 +104,6 @@ a {
   }
 }
 /*</Loading>*/
-
 /*<Header>*/
 header {
   position: relative;
@@ -160,7 +165,6 @@ header {
   opacity: 1;
 }
 /*</Navbar>*/
-
 #theme-switch {
   display: inline;
   width: 23px;
@@ -211,7 +215,6 @@ header {
   color: var(--theme-font);
 }
 /*</Header>*/
-
 /*<Main>*/
 .main {
   text-align: center;
@@ -222,7 +225,6 @@ header {
 .big-space {
   height: 35vh;
 }
-
 /*<Home>*/
 #home {
   text-align: center;
@@ -235,7 +237,6 @@ header {
   margin-top: 10vh;
   margin-bottom: 30vh;
 }
-
 /* --Heading Highlight--
 .heading::before {
   content: "";
@@ -248,6 +249,7 @@ header {
   height: 103%;
 } */
 
+//message
 #greeting {
   display: inline-block;
   overflow: hidden;
@@ -278,6 +280,10 @@ header {
 #my-name {
   font-size: large;
 }
+#intro {
+  margin-top: 2rem;
+}
+//skills
 #home .back-div {
   display: flex;
   justify-content: center;
@@ -304,7 +310,7 @@ header {
 #program-lang {
   padding-left: 90px;
 }
-/*visuals*/
+/*<visuals>*/
 .image-div {
   display: flex;
   align-items: left;
@@ -353,8 +359,8 @@ video.show {
 .visual-text span {
   visibility: hidden;
 }
+/*</visuals>*/
 /*</Home>*/
-
 /*<About>*/
 #about h2 {
   margin-bottom: 10px;
@@ -373,7 +379,6 @@ video.show {
   line-height: 60px;
 }
 /*</About>*/
-
 /*<Contact>*/
 #contact {
   text-align: center;
@@ -422,29 +427,20 @@ video.show {
   }
 }
 /*</Contact>*/
-/*</Main>*/
-
-/*<NotFound>*/
-#not-found {
-  margin-top: 20vh;
-}
-/*</NotFound>*/
-
 /*<NextButton>*/
 .next-button {
   display: block;
   position: relative;
   margin-top: 140px;
-  width: 90px;
-  height: 50px;
-  font-size: 35px;
+  width: 88px;
+  height: 49px;
+  font-size: 32px;
   color: var(--theme-font);
   border: 1px solid var(--theme-border-color);
   border-radius: var(--theme-border-radius);
   overflow: hidden;
-  background-color: var(--theme-color);
+  background-color: var(--theme-color-plus);
 }
-
 /*light*/
 .next-button.light {
   display: inline-block;
@@ -469,12 +465,14 @@ video.show {
 /*dark*/
 .next-button.dark {
   display: inline-block;
+  width: 89px;
+  height: 50px;
   margin: auto;
   margin-top: 140px;
   z-index: 1;
   cursor: pointer;
-  transition: all 0.35s ease-in;
-  transition-property: color, background-position;
+  transition: all 0.25s ease-out;
+  transition-property: background-position, color;
 }
 .next-button.dark::before {
   content: "";
@@ -499,7 +497,12 @@ video.show {
   transform: translate(2px, 3px);
 }
 /*</NextButton>*/
-
+/*</Main>*/
+/*<NotFound>*/
+#not-found {
+  margin-top: 20vh;
+}
+/*</NotFound>*/
 /*<Footer>*/
 .not-footer {
   min-height: 84vh;

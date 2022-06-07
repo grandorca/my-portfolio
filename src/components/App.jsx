@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import NotFound from "./NotFound";
 
 const App = () => {
-  //scroll-to-the-top
+  //scorll-to-top
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,7 +21,7 @@ const App = () => {
     document.title = "My Portfolio | " + location;
   }, [pathname]);
 
-  //theme-change(session storage)
+  //theme-change
   function currentTheme() {
     const theme = sessionStorage.getItem("theme");
     if (!theme) {
