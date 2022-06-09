@@ -448,10 +448,11 @@ header {
 }
 
 img {
+  position: relative;
   -webkit-transition: opacity 2s ease-out;
   transition: opacity 2s ease-out;
-  width: 27vw;
-  min-width: 200px;
+  width: 25vw;
+  min-width: 100px;
   height: auto;
   opacity: 0;
   border-radius: var(--theme-border-radius);
@@ -473,7 +474,6 @@ img.show {
 
 video {
   width: 50vw;
-  min-width: 300px;
   height: auto;
   border-radius: var(--theme-border-radius);
   -webkit-transition: opacity 2s ease-out;
@@ -486,7 +486,7 @@ video.show {
 }
 
 .visual-text {
-  width: 45vw;
+  width: 30vw;
   margin: auto;
   font-size: 18px;
 }
@@ -501,7 +501,7 @@ video.show {
   margin-right: 5vw;
 }
 
-.visual-text span {
+.visual-text .ciation {
   visibility: hidden;
 }
 
@@ -534,11 +534,7 @@ video.show {
 }
 
 #contact h2 {
-  margin-bottom: 6vh;
-}
-
-#contact p {
-  line-height: 60px;
+  margin-bottom: 5vh;
 }
 
 #contact a {
@@ -552,8 +548,10 @@ video.show {
 
 #contact .back-div {
   width: var(--theme-back-div-width);
-  margin: auto;
   text-align: center;
+  margin: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: var(--theme-back-div);
 }
 
@@ -561,12 +559,23 @@ video.show {
   border-top: 1px solid var(--theme-border-color);
 }
 
+#contact #second-back-div {
+  background-color: var(--theme-background);
+}
+
 #contact #last-back-div {
   background-color: var(--theme-background);
 }
 
-#thanks {
-  margin-top: 20vh;
+#contact i {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  font-size: large;
+  margin-right: 5px;
+}
+
+#contact #thanks {
+  margin-top: 21vh;
   font-size: larger;
   position: relative;
   bottom: 0;

@@ -28,7 +28,9 @@ const Home = (props) => {
           Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
           you
         </p>
-        <p id="intro">I'm an Irish programmer who loves to play around with programming and learning new things.
+        <p id="intro">
+          I'm a programmer who loves to play around with code and
+          learn new things.
         </p>
       </div>
 
@@ -58,12 +60,10 @@ const Home = (props) => {
       </div>
 
       <div className="image-div">
-        <img alt="building" src={buildingImg} ref={imgRef}></img>
+          <img alt="building" src={buildingImg} ref={imgRef}></img>
         <div className="visual-text" id="right-side">
-          <p>
-            Concise coding with scructure.
-          </p>
-          <span>Photo by Alexander Kozlov</span>
+          <p>Concise coding with scructure.</p>
+          <span className="citation">Photo by Alexander Kozlov</span>
         </div>
       </div>
 
@@ -75,16 +75,16 @@ const Home = (props) => {
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta,
             culpa
           </p>
-          <span>Video by Nothing Ahead from Pexels</span>
+          <span className="citation">Video by Nothing Ahead from Pexels</span>
         </div>
-        <video
-          autoPlay
-          muted
-          loop
-          ref={vidRef}
-          src={wave}
-          type="video/mp4"
-        ></video>
+          <video
+            autoPlay
+            muted
+            loop
+            ref={vidRef}
+            src={wave}
+            type="video/mp4"
+          ></video>
       </div>
 
       <Link className="next-anchor" to="/about">

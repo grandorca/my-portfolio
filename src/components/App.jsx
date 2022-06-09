@@ -36,6 +36,7 @@ const App = () => {
     const favicon = document.querySelector("#favicon");
 
     if (theme === "light") {
+      //light-theme
       document.documentElement.style.setProperty(
         "--theme-background",
         "#ffffff"
@@ -67,6 +68,8 @@ const App = () => {
       );
       favicon.href = "./favicon-white.png";
     } else {
+
+      //dark-theme
       document.documentElement.style.setProperty(
         "--theme-background",
         "#212121"
@@ -122,7 +125,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home theme={theme} />} />
           <Route path="/about" element={<About theme={theme} />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact theme={theme}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
