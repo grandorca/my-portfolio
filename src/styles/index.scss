@@ -6,7 +6,10 @@
   color: var(--theme-font);
 }
 :root {
-  --theme-background: #212121;
+  --theme-background: #1e1e1e;
+  --theme-back-div: #232323;
+  --theme-front-div: #1a1a1a;
+  --theme-back-div-width: auto;
   --theme-color: #181818;
   --theme-color-plus: #111111;
   --theme-less-color: #c8c8c8;
@@ -16,26 +19,26 @@
   --theme-border-color: #212121;
   --theme-border-radius: 10px;
   --theme-switch: right;
-  --theme-back-div: #262626;
-  --theme-back-div-width: auto;
-  --theme-front-div: #1a1a1a;
+  --theme-scrollbar: #3d3d3d;
 
   --display-dropdown: none;
 }
 body {
   background-color: var(--theme-background);
+  -webkit-font-smoothing: antialiased;
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--theme-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--theme-scrollbar);
+    border-radius: var(--theme-border-radius);
+    border: 0.1px solid var(--theme-color);
+  }
 }
-body::-webkit-scrollbar {
-  width: 0.6rem;
-}
-body::-webkit-scrollbar-track {
-  background: var(--theme-color);
-}
-body::-webkit-scrollbar-thumb {
-  background: #3d3d3d;
-  border-radius: 10px;
-  border: 0.1px solid var(--theme-color);
-}
+
 a {
   color: currentColor;
   text-decoration: none;
@@ -283,7 +286,7 @@ header {
 #intro {
   margin-top: 2rem;
 }
-//skill-set
+//skill-sets
 #home .back-div {
   display: flex;
   justify-content: center;
@@ -297,6 +300,7 @@ header {
 }
 .back-sub-div {
   text-align: left;
+  min-width: max-content;
 }
 .back-sub-div li {
   transition: all 0.5s ease-out;
@@ -310,73 +314,101 @@ header {
 #program-lang {
   padding-left: 90px;
 }
-/*<visuals>*/
+//visuals
 .image-div {
   display: flex;
   align-items: left;
   margin-left: 12%;
+  opacity: 0;
+  &.show {
+    opacity: 1;
+  }
+  transition: opacity 1.5s ease-out;
 }
 img {
   position: relative;
-  transition: opacity 2s ease-out;
   width: 25vw;
   min-width: 100px;
   height: auto;
-  opacity: 0;
   border-radius: var(--theme-border-radius);
 }
-img.show {
-  opacity: 1;
+.image-container {
+  position: relative;
+  &:hover img {
+    opacity: 0.6;
+  }
+  &:hover .citation {
+    opacity: 1;
+  }
 }
 .video-div {
   display: flex;
   justify-content: flex-end;
   margin-right: 7%;
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+  &.show {
+    opacity: 1;
+  }
 }
 video {
   width: 50vw;
   height: auto;
   border-radius: var(--theme-border-radius);
-  transition: opacity 2s ease-out;
-  opacity: 0;
 }
-video.show {
-  opacity: 1;
+.video-container {
+  position: relative;
+  &:hover video {
+    opacity: 0.6;
+  }
+  &:hover .citation {
+    opacity: 1;
+  }
+}
+.citation {
+  opacity: 0;
+  font-size: small;
+  position: absolute;
+  color: peru;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .visual-text {
   width: 30vw;
   margin: auto;
-  font-size: 18px;
+  font-size: medium;
+
+  &#right-side {
+    text-align: left;
+    margin-left: 5vw;
+  }
+  &#left-side {
+    text-align: right;
+    margin-right: 5vw;
+  }
 }
-.visual-text#right-side {
-  text-align: left;
-  margin-left: 5vw;
-}
-.visual-text#left-side {
-  text-align: right;
-  margin-right: 5vw;
-}
-.visual-text .ciation {
-  visibility: hidden;
-}
-/*</visuals>*/
 /*</Home>*/
 /*<About>*/
-#about h2 {
-  margin-bottom: 10px;
-  text-align: left;
-  margin: 0 20px;
-}
-#about .back-div {
-  text-align: left;
-  padding: 5vh;
-  margin-top: 10px;
-  background-color: var(--theme-back-div);
-  border-top: 1px solid var(--theme-border-color);
-  border-bottom: 1px solid var(--theme-border-color);
-}
-#about p {
-  line-height: 60px;
+#about {
+  & h2 {
+    text-align: left;
+    margin: 0 60px;
+    margin-bottom: 15px;
+  }
+  & .back-div {
+    text-align: left;
+    padding: 5vh;
+    background-color: var(--theme-back-div);
+    border-top: 1px solid var(--theme-border-color);
+    border-bottom: 1px solid var(--theme-border-color);
+    margin-top: 10px;
+  }
+  & p {
+    padding-right: 10vw;
+    line-height: 60px;
+    text-align: left;
+  }
 }
 /*</About>*/
 /*<Contact>*/
@@ -396,23 +428,26 @@ video.show {
     width: var(--theme-back-div-width);
     text-align: center;
     margin: auto;
-    padding-top:15px;
-    padding-bottom:15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     background-color: var(--theme-back-div);
   }
   & #first-back-div {
     border-top: 1px solid var(--theme-border-color);
   }
-  & #second-back-div{
+  & #second-back-div {
     background-color: var(--theme-background);
+    width: auto;
+    position: relative;
+    display: inline-block;
   }
   & #last-back-div {
     background-color: var(--theme-background);
   }
-  & i{
+  & i {
     transform: translateY(3px);
     font-size: large;
-    margin-right:5px;
+    margin-right: 5px;
   }
   & #thanks {
     margin-top: 21vh;
@@ -471,6 +506,7 @@ video.show {
 }
 /*dark*/
 .next-button.dark {
+  background-color: var(--theme-color);
   display: inline-block;
   width: 89px;
   height: 50px;

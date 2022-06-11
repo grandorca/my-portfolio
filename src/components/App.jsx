@@ -39,9 +39,14 @@ const App = () => {
       //light-theme
       document.documentElement.style.setProperty(
         "--theme-background",
-        "#ffffff"
+        "#fcfcfc"
       );
-      document.documentElement.style.setProperty("--theme-color", "#ffffff");
+      document.documentElement.style.setProperty("--theme-color", "#fcfcfc");
+      document.documentElement.style.setProperty("--theme-back-div", "#fcfcfc");
+      document.documentElement.style.setProperty(
+        "--theme-front-div",
+        "#fcfcfc"
+      );
       document.documentElement.style.setProperty("--theme-font", "#000000");
       document.documentElement.style.setProperty("--theme-font-sub", "#5C5C5C");
       document.documentElement.style.setProperty(
@@ -57,22 +62,26 @@ const App = () => {
         "georgia"
       );
       document.documentElement.style.setProperty("--theme-switch", "left");
-      document.documentElement.style.setProperty("--theme-back-div", "#ffffff");
-      document.documentElement.style.setProperty(
-        "--theme-front-div",
-        "#ffffff"
-      );
+
       document.documentElement.style.setProperty(
         "--theme-back-div-width",
         "400px"
       );
+      document.documentElement.style.setProperty(
+        "--theme-scrollbar",
+        "#0f0f0f"
+      );
       favicon.href = "./favicon-white.png";
     } else {
-
       //dark-theme
       document.documentElement.style.setProperty(
         "--theme-background",
-        "#212121"
+        "#1e1e1e"
+      );
+      document.documentElement.style.setProperty("--theme-back-div", "#232323");
+      document.documentElement.style.setProperty(
+        "--theme-front-div",
+        "#1a1a1a"
       );
       document.documentElement.style.setProperty("--theme-color", "#181818");
       document.documentElement.style.setProperty("--theme-font", "#ffffff");
@@ -90,14 +99,14 @@ const App = () => {
         "arial"
       );
       document.documentElement.style.setProperty("--theme-switch", "right");
-      document.documentElement.style.setProperty("--theme-back-div", "#262626");
-      document.documentElement.style.setProperty(
-        "--theme-front-div",
-        "#1a1a1a"
-      );
+
       document.documentElement.style.setProperty(
         "--theme-back-div-width",
         "auto"
+      );
+      document.documentElement.style.setProperty(
+        "--theme-scrollbar",
+        "#3d3d3d"
       );
       favicon.href = "./favicon-black.png";
     }
@@ -125,7 +134,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home theme={theme} />} />
           <Route path="/about" element={<About theme={theme} />} />
-          <Route path="/contact" element={<Contact theme={theme}/>} />
+          <Route path="/contact" element={<Contact theme={theme} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import buildingImg from "./visuals/building.jpg";
 import wave from "./visuals/beach-wave.mp4";
@@ -29,8 +29,8 @@ const Home = (props) => {
           you
         </p>
         <p id="intro">
-          I'm a programmer who loves to play around with code and
-          learn new things.
+          I'm a programmer who loves to play around with code and learn new
+          things.
         </p>
       </div>
 
@@ -59,32 +59,29 @@ const Home = (props) => {
         </div>
       </div>
 
-      <div className="image-div">
-          <img alt="building" src={buildingImg} ref={imgRef}></img>
+      <div className="image-div" ref={imgRef}>
+        <div className="image-container">
+          <img alt="building" src={buildingImg}></img>
+          <span className="citation">Photo by Alexander Kozlov</span>
+        </div>
         <div className="visual-text" id="right-side">
           <p>Concise coding with scructure.</p>
-          <span className="citation">Photo by Alexander Kozlov</span>
         </div>
       </div>
 
       <div className="big-space"></div>
 
-      <div className="video-div">
+      <div className="video-div" ref={vidRef}>
         <div className="visual-text" id="left-side">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta,
             culpa
           </p>
+        </div>
+        <div className="video-container">
+          <video autoPlay muted loop src={wave} type="video/mp4"></video>
           <span className="citation">Video by Nothing Ahead from Pexels</span>
         </div>
-          <video
-            autoPlay
-            muted
-            loop
-            ref={vidRef}
-            src={wave}
-            type="video/mp4"
-          ></video>
       </div>
 
       <Link className="next-anchor" to="/about">
