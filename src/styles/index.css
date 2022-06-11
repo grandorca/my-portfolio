@@ -28,6 +28,7 @@
 body {
   background-color: var(--theme-background);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::-webkit-scrollbar {
@@ -42,11 +43,6 @@ body::-webkit-scrollbar-thumb {
   background: var(--theme-scrollbar);
   border-radius: var(--theme-border-radius);
   border: 0.1px solid var(--theme-color);
-}
-
-a {
-  color: currentColor;
-  text-decoration: none;
 }
 
 /*<Loading>*/
@@ -216,6 +212,10 @@ header {
           justify-content: flex-end;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.navbar-list a {
+  text-decoration: none;
 }
 
 .navbar-item {
@@ -550,7 +550,7 @@ video {
 
 #about .back-div {
   text-align: left;
-  padding: 5vh;
+  padding: 3vh;
   background-color: var(--theme-back-div);
   border-top: 1px solid var(--theme-border-color);
   border-bottom: 1px solid var(--theme-border-color);

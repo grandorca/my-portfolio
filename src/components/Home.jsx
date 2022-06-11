@@ -4,6 +4,7 @@ import buildingImg from "./visuals/building.jpg";
 import wave from "./visuals/beach-wave.mp4";
 
 const Home = (props) => {
+  
   //observer
   const imgRef = useRef();
   const vidRef = useRef();

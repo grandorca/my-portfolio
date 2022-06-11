@@ -20,7 +20,12 @@ const Header = (props) => {
   useEffect(() => {
     function handleResize() {
       let rect = switchRef.current.getBoundingClientRect();
-      dropdownRef.current.style.setProperty("left", rect.left - 26 + "px");
+      if (window.innerWidth < 640) {
+        dropdownRef.current.style.setProperty("left", "");
+        dropdownRef.current.style.setProperty("right", "4px");
+      } else {
+        dropdownRef.current.style.setProperty("left", rect.left - 26 + "px");
+      }
     }
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -33,7 +38,7 @@ const Header = (props) => {
   function darkTheme() {
     props.changeTheme("dark");
   }
-  
+
   return (
     <>
       <header>
