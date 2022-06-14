@@ -4,15 +4,16 @@ import buildingImg from "./visuals/building.jpg";
 import wave from "./visuals/beach-wave.mp4";
 
 const Home = (props) => {
-  
-  //observer
+  //scroll-effect
   const imgRef = useRef();
   const vidRef = useRef();
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        entry.target.classList.toggle("show", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.toggle("show", entry.isIntersecting);
+        }
       },
       { threshold: 0.1 }
     );
@@ -22,7 +23,7 @@ const Home = (props) => {
 
   return (
     <div className="main" id="home">
-      <h2 className="heading">Front-end Developer, Software Developer</h2>
+      <h2 className="heading">Web Developer, Software Developer</h2>
 
       <div>
         <p id="greeting">
@@ -66,7 +67,7 @@ const Home = (props) => {
           <span className="citation">Photo by Alexander Kozlov</span>
         </div>
         <div className="visual-text" id="right-side">
-          <p>Concise coding with scructure.</p>
+          <p>Efficient, Concise and structured coding.</p>
         </div>
       </div>
 
@@ -74,10 +75,7 @@ const Home = (props) => {
 
       <div className="video-div" ref={vidRef}>
         <div className="visual-text" id="left-side">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta,
-            culpa
-          </p>
+          <p>Dynamic, make static page comes to life</p>
         </div>
         <div className="video-container">
           <video autoPlay muted loop src={wave} type="video/mp4"></video>
@@ -86,7 +84,9 @@ const Home = (props) => {
       </div>
 
       <Link className="next-anchor" to="/about">
-        <button className={`next-button ${props.theme}`}>Next</button>
+        <button className={`next-button ${props.theme}`}>
+          <p className={`next-text ${props.theme}`}>Next</p>
+        </button>
       </Link>
     </div>
   );

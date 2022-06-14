@@ -30,7 +30,6 @@ const App = () => {
     return theme;
   }
   const [theme, setTheme] = useState(currentTheme());
-
   useEffect(() => {
     sessionStorage.setItem("theme", theme);
     const favicon = document.querySelector("#favicon");
@@ -71,6 +70,10 @@ const App = () => {
         "--theme-scrollbar",
         "#0f0f0f"
       );
+      document.documentElement.style.setProperty(
+        "--mailto-opacity",
+        "0.6"
+      );
       favicon.href = "./favicon-white.png";
     } else {
       //dark-theme
@@ -107,6 +110,10 @@ const App = () => {
       document.documentElement.style.setProperty(
         "--theme-scrollbar",
         "#3d3d3d"
+      );
+      document.documentElement.style.setProperty(
+        "--mailto-opacity",
+        "0.3"
       );
       favicon.href = "./favicon-black.png";
     }
