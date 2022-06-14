@@ -7,18 +7,19 @@ const About = (props) => {
 
       <div className="back-div">
         <p id="about-me">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-          necessitatibus iusto amet laborum reiciendis obcaecati. Doloremque,
-          quis asperiores. Excepturi voluptatibus aperiam debitis est? Eaque
-          ullam ad officia, inventore nobis eveniet itaque dolorum nemo. Dolores
-          et, quos saepe optio a minima consequuntur maxime? Magni quidem fugit
-          velit exercitationem rerum corporis nisi perspiciatis adipisci ad
-          porro impedit, blanditiis cupiditate est quos minus laudantium fugiat,
-          odio earum corrupti quisquam quis doloremque veritatis nihil
-          inventore. Nihil odio suscipit amet, corporis mollitia beatae
-          blanditiis obcaecati nostrum harum. Tempore, aperiam rerum. Facere
-          deleniti ea et praesentium, impedit numquam corrupti, voluptas,
-          asperiores magnam omnis velit tenetur excepturi?
+          &nbsp;At first I studied aviation in Providence UC. However,
+          <br></br>
+          &nbsp;I finished certificate program, Software Development in Red
+          River College. I learned general computer science, database(SQL) and
+          Java. However, I found my interest in Web Development even thought it
+          was not part of the curriculum. I self taught HTML, CSS, JavaScript
+          and React.
+          <br></br>
+          &nbsp;I'm excited to make the leap and continue refining my skills
+          with the right company. Drop me a line and/or your favourite
+          restaurant in Toronto in the contact form below or check me out
+          at:experiences for a variety of clients. I recently finished a
+          certificate program from Red River College (RRC).
         </p>
       </div>
 

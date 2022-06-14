@@ -322,7 +322,7 @@ header {
     opacity: 1;
   }
   &.show .image-container {
-    transform: translateX(0%);
+    transform: translateX(0%) scale(1);
   }
 }
 img {
@@ -333,7 +333,7 @@ img {
   border-radius: var(--theme-border-radius);
 }
 .image-container {
-  transform: translateX(-10%);
+  transform: translateX(-10%) scale(0.9);
   transition: transform 0.5s ease-out;
 
   position: relative;
@@ -354,7 +354,7 @@ img {
     opacity: 1;
   }
   &.show .video-container {
-    transform: translateX(0%);
+    transform: translateX(0%) scale(1);
   }
 }
 video {
@@ -363,7 +363,7 @@ video {
   border-radius: var(--theme-border-radius);
 }
 .video-container {
-  transform: translateX(10%);
+  transform: translateX(10%) scale(0.9);
   transition: transform 0.5s ease-out;
   position: relative;
   &:hover video {

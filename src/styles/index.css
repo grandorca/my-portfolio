@@ -453,8 +453,8 @@ header {
 }
 
 .image-div.show .image-container {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateX(0%) scale(1);
+          transform: translateX(0%) scale(1);
 }
 
 img {
@@ -466,8 +466,8 @@ img {
 }
 
 .image-container {
-  -webkit-transform: translateX(-10%);
-          transform: translateX(-10%);
+  -webkit-transform: translateX(-10%) scale(0.9);
+          transform: translateX(-10%) scale(0.9);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
@@ -501,8 +501,8 @@ img {
 }
 
 .video-div.show .video-container {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+  -webkit-transform: translateX(0%) scale(1);
+          transform: translateX(0%) scale(1);
 }
 
 video {
@@ -512,8 +512,8 @@ video {
 }
 
 .video-container {
-  -webkit-transform: translateX(10%);
-          transform: translateX(10%);
+  -webkit-transform: translateX(10%) scale(0.9);
+          transform: translateX(10%) scale(0.9);
   -webkit-transition: -webkit-transform 0.5s ease-out;
   transition: -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out;
