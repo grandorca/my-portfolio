@@ -7,7 +7,8 @@ const About = (props) => {
 
       <div className="back-div">
         <p id="about-me">
-          &nbsp;At first I studied aviation in Providence UC. However,
+          &nbsp;Initially, I studied aviation in Providence UC. and start over
+          with computer science.
           <br></br>
           &nbsp;I finished certificate program, Software Development in Red
           River College. I learned general computer science, database(SQL) and
@@ -16,10 +17,8 @@ const About = (props) => {
           and React.
           <br></br>
           &nbsp;I'm excited to make the leap and continue refining my skills
-          with the right company. Drop me a line and/or your favourite
-          restaurant in Toronto in the contact form below or check me out
-          at:experiences for a variety of clients. I recently finished a
-          certificate program from Red River College (RRC).
+          with the right company. Drop me a line and/or check me out
+          at:experiences for a variety of clients.
         </p>
       </div>
 

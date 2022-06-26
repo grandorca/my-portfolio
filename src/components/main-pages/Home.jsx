@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import buildingImg from "./visuals/building.jpg";
-import wave from "./visuals/beach-wave.mp4";
+import buildingImg from "../visuals/building.jpg";
+import wave from "../visuals/wave.mp4";
 
 const Home = (props) => {
   //scroll-effect
@@ -15,7 +15,7 @@ const Home = (props) => {
           entry.target.classList.toggle("show", entry.isIntersecting);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.05 }
     );
     observer.observe(imgRef.current);
     observer.observe(vidRef.current);
