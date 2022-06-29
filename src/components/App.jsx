@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
-import Home from "./main-pages/Home";
-import About from "./main-pages/About";
-import Contact from "./main-pages/Contact";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
 import Footer from "./Footer";
 import NotFound from "./NotFound";
 
@@ -70,7 +70,6 @@ const App = () => {
         "--theme-scrollbar",
         "#0f0f0f"
       );
-      document.documentElement.style.setProperty("--mailto-opacity", "0.6");
       favicon.href = "./favicon-white.png";
     } else {
       //dark-theme
@@ -108,7 +107,6 @@ const App = () => {
         "--theme-scrollbar",
         "#3d3d3d"
       );
-      document.documentElement.style.setProperty("--mailto-opacity", "0.4");
       favicon.href = "./favicon-black.png";
     }
   }, [theme]);

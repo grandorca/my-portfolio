@@ -31,7 +31,7 @@ const Contact = (props) => {
 
       <div className="back-div" id="third-back=div">
         <p>
-          <i className={`bx bx${icon}-phone`}></i>Phone: 204-***-****
+          <i className={`bx bx${icon}-phone`}></i>Phone: 1-204-***-****
         </p>
       </div>
 

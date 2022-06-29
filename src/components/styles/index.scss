@@ -20,7 +20,6 @@
   --theme-border-radius: 10px;
   --theme-switch: right;
   --theme-scrollbar: #3d3d3d;
-  --mailto-opacity: 0.3;
 
   --display-dropdown: none;
 }
@@ -119,12 +118,13 @@ body {
   }
 }
 //Header
-header {
+.page-header {
   position: relative;
   background: var(--theme-color);
   text-align: left;
 }
 #title {
+  content: "Moohyun Kang";
   position: relative;
   margin: 15px 0 16px 30px;
   display: inline-block;
@@ -153,7 +153,7 @@ header {
   display: inline-block;
   list-style: none;
   margin: 10px 3% 8px 2%;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 .navbar-item::before {
   content: "";
@@ -231,7 +231,7 @@ header {
 .dropdown-item:hover {
   color: var(--theme-font);
 }
-//main
+//main-page
 .main {
   text-align: center;
 }
@@ -250,8 +250,8 @@ header {
   display: inline-block;
   position: relative;
   font-size: 65px;
-  margin-top: 10vh;
-  margin-bottom: 30vh;
+  margin-top: 5vh;
+  margin-bottom: 14vh;
 }
 //--heading highlight--
 /*.heading::before {
@@ -269,6 +269,8 @@ header {
   display: inline-block;
   overflow: hidden;
   position: relative;
+  font-size: large;
+  margin-bottom: 1rem;
 }
 #greeting:before {
   content: "";
@@ -282,7 +284,7 @@ header {
     var(--theme-background) 5%,
     var(--theme-background) 100%
   );
-  animation: text-reveal 5s ease forwards 0.1s;
+  animation: text-reveal 5s ease forwards;
 }
 @keyframes text-reveal {
   0% {
@@ -292,39 +294,41 @@ header {
     left: 100%;
   }
 }
-#my-name {
-  font-size: large;
-}
 #intro {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 //skill-sets
 #home .back-div {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 20vh;
   gap: 10%;
   background-color: var(--theme-back-div);
   border-top: 1px solid var(--theme-border-color);
   border-bottom: 1px solid var(--theme-border-color);
-  padding: 15vh;
-}
-.back-sub-div {
-  text-align: left;
-  min-width: max-content;
-}
-.back-sub-div li {
-  transition: all 0.5s ease-out;
-}
-.back-sub-div li:hover {
-  transform: translateY(-5px);
-}
-#dev-tool {
-  transform: translate(35%);
-}
-#program-lang {
-  transform: translate(40%);
+  padding: 13vh 0;
+  margin-bottom: 20vh;
+
+  & .back-sub-div {
+    display: block;
+    text-align: left;
+    justify-content: center;
+
+    & .sub-div-title {
+      margin-bottom: 1rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    & .list-container {
+      display: inline-block;
+      
+    }
+    & .list-element {
+      transition: all 0.5s ease-out;
+    }
+    & .list-element:hover {
+      transform: translateY(-5px);
+    }
+  }
 }
 //visuals
 .image-div {
@@ -340,7 +344,7 @@ header {
     transform: translateX(0%);
   }
 }
-img {
+#home-image {
   position: relative;
   width: 25vw;
   min-width: 100px;
@@ -352,7 +356,7 @@ img {
   transition: transform 0.5s ease-out;
 
   position: relative;
-  &:hover img {
+  &:hover #home-image {
     opacity: 0.6;
   }
   &:hover .citation {
@@ -372,7 +376,7 @@ img {
     transform: translateX(0%);
   }
 }
-video {
+#home-video {
   width: 50vw;
   height: auto;
   border-radius: var(--theme-border-radius);
@@ -381,7 +385,7 @@ video {
   transform: translateX(10%);
   transition: transform 0.5s ease-out;
   position: relative;
-  &:hover video {
+  &:hover #home-video {
     opacity: 0.6;
   }
   &:hover .citation {
@@ -420,14 +424,13 @@ video {
   }
   & .back-div {
     text-align: left;
-    padding: 3vh;
+    padding: 4vh;
     background-color: var(--theme-back-div);
     border-top: 1px solid var(--theme-border-color);
     border-bottom: 1px solid var(--theme-border-color);
     margin-top: 10px;
   }
   & p#about-me {
-    padding-right: 10vw;
     line-height: 60px;
     text-align: left;
   }
@@ -461,14 +464,6 @@ video {
     width: auto;
     position: relative;
     display: inline-block;
-    &::before {
-      content: "mailto";
-      opacity: var(--mailto-opacity);
-      color: peru;
-      position: absolute;
-      right: 0;
-      transform: translate(120%, 20%);
-    }
   }
   & #last-back-div {
     background-color: var(--theme-background);
@@ -490,7 +485,10 @@ video {
   0% {
     opacity: 0.3;
   }
-  50% {
+  40% {
+    opacity: 1;
+  }
+  65% {
     opacity: 1;
   }
   100% {
@@ -511,7 +509,7 @@ video {
   overflow: hidden;
   background-color: var(--theme-color-plus);
 }
-/*light*/
+//light-button
 .next-button.light {
   display: inline-block;
   background: linear-gradient(
@@ -538,7 +536,7 @@ video {
     color: var(--theme-color);
   }
 }
-/*dark*/
+//dark-button
 .next-button.dark {
   background-color: var(--theme-color);
   display: inline-block;
@@ -556,9 +554,6 @@ video {
   & .next-text.dark {
     animation: for-dark-in 0.3s ease 0.1s forwards;
   }
-}
-.next-button.dark:hover:before {
-  transform: scale(1.5);
 }
 @keyframes for-dark-in {
   0% {
@@ -583,31 +578,11 @@ video {
     color: var(--theme-font);
   }
 }
-@keyframes for-dark-out {
-  0% {
-    color: var(--theme-font);
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  51% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  52% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    color: var(--theme-font);
-  }
-}
 .next-button:active {
-  transform: translate(2px, 3px);
+  transform: scale(0.93);
+  & .next-text.dark {
+    color: blue;
+  }
 }
 //NotFound
 #not-found {
@@ -615,19 +590,33 @@ video {
 }
 //Footer
 .not-footer {
-  min-height: 84vh;
+  min-height: 86vh;
 }
-footer {
-  margin-top: 6vh;
-  height: 10vh;
-  position: relative;
+.footer {
+  margin-top: 7vh;
+  height: 7vh;
   bottom: 0;
   background: var(--theme-color);
-  width: 100%;
   display: grid;
   place-items: center;
   border-top: 1px solid var(--theme-border-color);
+  & .copyright {
+    font-size: calc(7px + 1vmin);
+  }
 }
-footer p {
-  font-size: 17px;
+//general-mobile
+@media only screen and (max-width: 640px) {
+  //navbar
+  .navbar {
+    margin-top: -20px;
+  }
+  //home
+  #home .back-div {
+    flex-direction: column;
+    gap: 8vh;
+  }
+  //footer
+  .footer {
+    padding: 0rem auto;
+  }
 }

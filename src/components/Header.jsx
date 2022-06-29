@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
@@ -22,16 +22,19 @@ const Header = (props) => {
       let rect = switchRef.current.getBoundingClientRect();
       if (window.innerWidth < 640) {
         dropdownRef.current.style.setProperty("left", "");
-        dropdownRef.current.style.setProperty("right", "4px");
+        dropdownRef.current.style.setProperty("right", "2px");
       } else {
-        dropdownRef.current.style.setProperty("left", rect.left - 26 + "px");
+        dropdownRef.current.style.setProperty(
+          "right",
+          `calc(1vmin + ${rect.left}px / 85)`
+        );
       }
     }
     handleResize();
     window.addEventListener("resize", handleResize);
   });
 
-  //theme-change-trigger
+  //theme-change-methods
   function lightTheme() {
     props.changeTheme("light");
   }
@@ -41,7 +44,7 @@ const Header = (props) => {
 
   return (
     <>
-      <header>
+      <header className="page-header">
         <h1 id="title">Moohyun Kang</h1>
       </header>
       <nav className="navbar">

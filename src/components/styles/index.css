@@ -21,7 +21,6 @@
   --theme-border-radius: 10px;
   --theme-switch: right;
   --theme-scrollbar: #3d3d3d;
-  --mailto-opacity: 0.3;
   --display-dropdown: none;
 }
 
@@ -167,13 +166,14 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
   }
 }
-header {
+.page-header {
   position: relative;
   background: var(--theme-color);
   text-align: left;
 }
 
 #title {
+  content: "Moohyun Kang";
   position: relative;
   margin: 15px 0 16px 30px;
   display: inline-block;
@@ -208,7 +208,7 @@ header {
   display: inline-block;
   list-style: none;
   margin: 10px 3% 8px 2%;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease;
 }
 
 .navbar-item::before {
@@ -313,8 +313,8 @@ header {
   display: inline-block;
   position: relative;
   font-size: 65px;
-  margin-top: 10vh;
-  margin-bottom: 30vh;
+  margin-top: 5vh;
+  margin-bottom: 14vh;
 }
 
 /*.heading::before {
@@ -331,6 +331,8 @@ header {
   display: inline-block;
   overflow: hidden;
   position: relative;
+  font-size: large;
+  margin-bottom: 1rem;
 }
 
 #greeting:before {
@@ -340,8 +342,8 @@ header {
   width: 120%;
   height: 100%;
   background: linear-gradient(to right, transparent 0%, var(--theme-background) 5%, var(--theme-background) 100%);
-  -webkit-animation: text-reveal 5s ease forwards 0.1s;
-          animation: text-reveal 5s ease forwards 0.1s;
+  -webkit-animation: text-reveal 5s ease forwards;
+          animation: text-reveal 5s ease forwards;
 }
 
 @-webkit-keyframes text-reveal {
@@ -361,47 +363,38 @@ header {
     left: 100%;
   }
 }
-#my-name {
-  font-size: large;
-}
-
 #intro {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #home .back-div {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 20vh;
   gap: 10%;
   background-color: var(--theme-back-div);
   border-top: 1px solid var(--theme-border-color);
   border-bottom: 1px solid var(--theme-border-color);
-  padding: 15vh;
+  padding: 13vh 0;
+  margin-bottom: 20vh;
 }
-
-.back-sub-div {
+#home .back-div .back-sub-div {
+  display: block;
   text-align: left;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
+  justify-content: center;
 }
-
-.back-sub-div li {
+#home .back-div .back-sub-div .sub-div-title {
+  margin-bottom: 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+#home .back-div .back-sub-div .list-container {
+  display: inline-block;
+}
+#home .back-div .back-sub-div .list-element {
   transition: all 0.5s ease-out;
 }
-
-.back-sub-div li:hover {
+#home .back-div .back-sub-div .list-element:hover {
   transform: translateY(-5px);
-}
-
-#dev-tool {
-  transform: translate(35%);
-}
-
-#program-lang {
-  transform: translate(40%);
 }
 
 .image-div {
@@ -418,7 +411,7 @@ header {
   transform: translateX(0%);
 }
 
-img {
+#home-image {
   position: relative;
   width: 25vw;
   min-width: 100px;
@@ -431,7 +424,7 @@ img {
   transition: transform 0.5s ease-out;
   position: relative;
 }
-.image-container:hover img {
+.image-container:hover #home-image {
   opacity: 0.6;
 }
 .image-container:hover .citation {
@@ -452,7 +445,7 @@ img {
   transform: translateX(0%);
 }
 
-video {
+#home-video {
   width: 50vw;
   height: auto;
   border-radius: var(--theme-border-radius);
@@ -463,7 +456,7 @@ video {
   transition: transform 0.5s ease-out;
   position: relative;
 }
-.video-container:hover video {
+.video-container:hover #home-video {
   opacity: 0.6;
 }
 .video-container:hover .citation {
@@ -501,14 +494,13 @@ video {
 }
 #about .back-div {
   text-align: left;
-  padding: 3vh;
+  padding: 4vh;
   background-color: var(--theme-back-div);
   border-top: 1px solid var(--theme-border-color);
   border-bottom: 1px solid var(--theme-border-color);
   margin-top: 10px;
 }
 #about p#about-me {
-  padding-right: 10vw;
   line-height: 60px;
   text-align: left;
 }
@@ -543,14 +535,6 @@ video {
   position: relative;
   display: inline-block;
 }
-#contact #second-back-div::before {
-  content: "mailto";
-  opacity: var(--mailto-opacity);
-  color: peru;
-  position: absolute;
-  right: 0;
-  transform: translate(120%, 20%);
-}
 #contact #last-back-div {
   background-color: var(--theme-background);
 }
@@ -572,7 +556,10 @@ video {
   0% {
     opacity: 0.3;
   }
-  50% {
+  40% {
+    opacity: 1;
+  }
+  65% {
     opacity: 1;
   }
   100% {
@@ -584,7 +571,10 @@ video {
   0% {
     opacity: 0.3;
   }
-  50% {
+  40% {
+    opacity: 1;
+  }
+  65% {
     opacity: 1;
   }
   100% {
@@ -605,7 +595,6 @@ video {
   background-color: var(--theme-color-plus);
 }
 
-/*light*/
 .next-button.light {
   display: inline-block;
   background: linear-gradient(to bottom, var(--theme-font) 40%, gray 40%, gray 60%, var(--theme-color) 60%, var(--theme-color) 100%);
@@ -627,7 +616,6 @@ video {
   color: var(--theme-color);
 }
 
-/*dark*/
 .next-button.dark {
   background-color: var(--theme-color);
   display: inline-block;
@@ -647,10 +635,6 @@ video {
 .next-button.dark:hover .next-text.dark {
   -webkit-animation: for-dark-in 0.3s ease 0.1s forwards;
           animation: for-dark-in 0.3s ease 0.1s forwards;
-}
-
-.next-button.dark:hover:before {
-  transform: scale(1.5);
 }
 
 @-webkit-keyframes for-dark-in {
@@ -700,54 +684,11 @@ video {
     color: var(--theme-font);
   }
 }
-@-webkit-keyframes for-dark-out {
-  0% {
-    color: var(--theme-font);
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  51% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  52% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    color: var(--theme-font);
-  }
-}
-@keyframes for-dark-out {
-  0% {
-    color: var(--theme-font);
-  }
-  49% {
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  51% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  52% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    color: var(--theme-font);
-  }
-}
 .next-button:active {
-  transform: translate(2px, 3px);
+  transform: scale(0.93);
+}
+.next-button:active .next-text.dark {
+  color: blue;
 }
 
 #not-found {
@@ -755,21 +696,33 @@ video {
 }
 
 .not-footer {
-  min-height: 84vh;
+  min-height: 86vh;
 }
 
-footer {
-  margin-top: 6vh;
-  height: 10vh;
-  position: relative;
+.footer {
+  margin-top: 7vh;
+  height: 7vh;
   bottom: 0;
   background: var(--theme-color);
-  width: 100%;
   display: grid;
   place-items: center;
   border-top: 1px solid var(--theme-border-color);
 }
+.footer .copyright {
+  font-size: calc(7px + 1vmin);
+}
 
-footer p {
-  font-size: 17px;
+@media only screen and (max-width: 640px) {
+  .navbar {
+    margin-top: -20px;
+  }
+
+  #home .back-div {
+    flex-direction: column;
+    gap: 8vh;
+  }
+
+  .footer {
+    padding: 0rem auto;
+  }
 }/*# sourceMappingURL=index.css.map */

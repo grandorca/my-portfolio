@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import buildingImg from "../visuals/building.jpg";
-import wave from "../visuals/wave.mp4";
+import buildingImg from "./visuals/building.jpg";
+import wave from "./visuals/wave.mp4";
 
 const Home = (props) => {
   //scroll-effect
@@ -21,15 +21,16 @@ const Home = (props) => {
     observer.observe(vidRef.current);
   }, []);
 
+  //developer-tools and programming-languages
+  const tools = ["VSCode", "Eclipse", "MySQL", "GitHub"];
+  const languages = ["(React)", "HTML", "CSS", "JavaScript", "Java", "SQL"];
+
   return (
     <div className="main" id="home">
-      <h2 className="heading">Web Developer, Software Developer</h2>
+      <h2 className="heading">Web Developer</h2>
 
-      <div>
-        <p id="greeting">
-          Hello, my name is <span id="my-name">Moohyun Kang</span>. Nice to meet
-          you
-        </p>
+      <div className="message-div">
+        <p id="greeting">Hello, my name is Moohyun Kang. Nice to meet you</p>
         <p id="intro">
           I'm a programmer who loves to play around with code and learn new
           things.
@@ -38,32 +39,35 @@ const Home = (props) => {
 
       <div className="back-div">
         <div className="back-sub-div">
-          <h4>Development Tools</h4>
-          <br></br>
-          <ul id="dev-tool">
-            <li>VSCode</li>
-            <li>Eclipse</li>
-            <li>MySQL</li>
-            <li>GitHub</li>
+          <h4 className="sub-div-title">Development Tools</h4>
+          <ul className="list-container">
+            {tools.map((tool) => {
+              return (
+                <li key={tool} className="list-element">
+                  {tool}
+                </li>
+              );
+            })}
           </ul>
         </div>
+
         <div className="back-sub-div">
-          <h4>Programming Langauges</h4>
-          <br></br>
-          <ul id="program-lang">
-            <li>&#40;React&#41;</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Java</li>
-            <li>SQL</li>
+          <h4 className="sub-div-title">Programming Langauges</h4>
+          <ul className="list-container">
+            {languages.map((lang) => {
+              return (
+                <li key={lang} className="list-element">
+                  {lang}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
 
       <div className="image-div" ref={imgRef}>
         <div className="image-container">
-          <img alt="building" src={buildingImg}></img>
+          <img id="home-image" alt="building" src={buildingImg}></img>
           <span className="citation">Photo by Alexander Kozlov</span>
         </div>
         <div className="visual-text" id="right-side">
@@ -78,7 +82,14 @@ const Home = (props) => {
           <p>Dynamic, make static page comes to life</p>
         </div>
         <div className="video-container">
-          <video autoPlay muted loop src={wave} type="video/mp4"></video>
+          <video
+            id="home-video"
+            autoPlay
+            muted
+            loop
+            src={wave}
+            type="video/mp4"
+          ></video>
           <span className="citation">Video by Nothing Ahead from Pexels</span>
         </div>
       </div>
