@@ -2,18 +2,6 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  //dropdown-display
-  function themeDown() {
-    let currentValue = getComputedStyle(
-      document.documentElement
-    ).getPropertyValue("--display-dropdown");
-    currentValue = currentValue !== "block" ? "block" : "none";
-    document.documentElement.style.setProperty(
-      "--display-dropdown",
-      currentValue
-    );
-  }
-
   //dropdown-position
   const switchRef = useRef();
   const dropdownRef = useRef();
@@ -21,18 +9,40 @@ const Header = (props) => {
     function handleResize() {
       let rect = switchRef.current.getBoundingClientRect();
       if (window.innerWidth < 640) {
-        dropdownRef.current.style.setProperty("left", "");
-        dropdownRef.current.style.setProperty("right", "2px");
+        document.documentElement.style.setProperty(
+          "--display-dropdown",
+          "none"
+        );
       } else {
         dropdownRef.current.style.setProperty(
           "right",
-          `calc(1vmin + ${rect.left}px / 85)`
+          `calc(${rect.left}px / 58)`
         );
       }
     }
     handleResize();
     window.addEventListener("resize", handleResize);
   });
+  //dropdown-display & change-for-mobile
+  function themeDown() {
+    let currentValue = getComputedStyle(
+      document.documentElement
+    ).getPropertyValue("--display-dropdown");
+
+    if (window.innerWidth < 640) {
+      if (props.theme == "dark") {
+        props.changeTheme("light");
+      } else {
+        props.changeTheme("dark");
+      }
+    } else {
+      currentValue = currentValue !== "block" ? "block" : "none";
+      document.documentElement.style.setProperty(
+        "--display-dropdown",
+        currentValue
+      );
+    }
+  }
 
   //theme-change-methods
   function lightTheme() {

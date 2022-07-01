@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
@@ -22,6 +22,7 @@ const App = () => {
   }, [pathname]);
 
   //theme-change
+  const [theme, setTheme] = useState(currentTheme());
   function currentTheme() {
     const theme = sessionStorage.getItem("theme");
     if (!theme) {
@@ -29,7 +30,6 @@ const App = () => {
     }
     return theme;
   }
-  const [theme, setTheme] = useState(currentTheme());
   useEffect(() => {
     sessionStorage.setItem("theme", theme);
     const favicon = document.querySelector("#favicon");
@@ -110,9 +110,9 @@ const App = () => {
       favicon.href = "./favicon-black.png";
     }
   }, [theme]);
-
   //loading-animation
   const [loading, setLoading] = useState("true");
+  const loadingRef = useRef();
   async function doLoading() {
     await new Promise((res) => setTimeout(res, 2000));
     setLoading("false");
@@ -123,14 +123,15 @@ const App = () => {
 
   return (
     <>
-      <div className="loading-page" id={loading}>
+      <div className="loading-page" id={loading} ref={loadingRef}>
         <p id="m">M</p>
         <p id="k">K</p>
       </div>
+
       <div className="not-footer">
-        <Header changeTheme={setTheme}></Header>
+        <Header theme={theme} changeTheme={setTheme}></Header>
         <Routes>
-          <Route path="/" element={<Home theme={theme} />} />
+          <Route path="/" element={<Home theme={theme} loading={loading} />} />
           <Route path="/about" element={<About theme={theme} />} />
           <Route path="/contact" element={<Contact theme={theme} />} />
           <Route path="*" element={<NotFound />} />

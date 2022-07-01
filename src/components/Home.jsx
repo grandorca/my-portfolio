@@ -30,8 +30,13 @@ const Home = (props) => {
       <h2 className="heading">Web Developer</h2>
 
       <div className="message-div">
-        <p id="greeting">Hello, my name is Moohyun Kang. Nice to meet you</p>
-        <p id="intro">
+        <p className={`greeting ${props.loading}`}>
+          <span className="greeting-element">
+            Hello, my name is Moohyun Kang.&nbsp;
+          </span>
+          <span className="greeting-element">Nice to meet you</span>
+        </p>
+        <p className="intro">
           I'm a programmer who loves to play around with code and learn new
           things.
         </p>
@@ -65,23 +70,22 @@ const Home = (props) => {
         </div>
       </div>
 
-      <div className="image-div" ref={imgRef}>
-        <div className="image-container">
+      <div className="visual-div" id="image-div" ref={imgRef}>
+        <div className="visual-container" id="image-container">
           <img id="home-image" alt="building" src={buildingImg}></img>
           <span className="citation">Photo by Alexander Kozlov</span>
         </div>
-        <div className="visual-text" id="right-side">
-          <p>Efficient, Concise and structured coding.</p>
+
+        <div className="visual-text">
+          <p className="visual-line">
+            <span className="visual-word">Efficient,&nbsp;</span>Concise and
+            structured coding.
+          </p>
         </div>
       </div>
 
-      <div className="big-space"></div>
-
-      <div className="video-div" ref={vidRef}>
-        <div className="visual-text" id="left-side">
-          <p>Dynamic, make static page comes to life</p>
-        </div>
-        <div className="video-container">
+      <div className="visual-div" id="video-div" ref={vidRef}>
+        <div className="visual-container" id="video-container">
           <video
             id="home-video"
             autoPlay
@@ -91,6 +95,13 @@ const Home = (props) => {
             type="video/mp4"
           ></video>
           <span className="citation">Video by Nothing Ahead from Pexels</span>
+        </div>
+
+        <div className="visual-text">
+          <p className="visual-line">
+            <span className="visual-word">Dynamic,&nbsp;</span>make static page
+            comes to life
+          </p>
         </div>
       </div>
 

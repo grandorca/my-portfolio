@@ -24,21 +24,15 @@ const Contact = (props) => {
 
       <div className="back-div" id="second-back-div">
         <p>
-          <i className={`bx bx${icon}-envelope`}></i> Email:
+          <i className={`bx bx${icon}-envelope`}></i> Email:&nbsp;
           <a href="mailto:moohka@hotmail.com">moohka@hotmail.com </a>
-        </p>
-      </div>
-
-      <div className="back-div" id="third-back=div">
-        <p>
-          <i className={`bx bx${icon}-phone`}></i>Phone: 1-204-***-****
         </p>
       </div>
 
       <div className="back-div" id="last-back-div">
         <p>
           <i className="bx bxl-github"></i>
-          GitHub:
+          GitHub:&nbsp;
           <a href="http://github.com/moohka" target="_blank" rel="noreferrer">
             moohka
           </a>
