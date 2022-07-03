@@ -11,6 +11,7 @@
   --theme-back-div: #232323;
   --theme-front-div: #1a1a1a;
   --theme-back-div-width: auto;
+  --theme-back-div-max-width: auto;
   --theme-color: #181818;
   --theme-color-plus: #111111;
   --theme-less-color: #c8c8c8;
@@ -180,7 +181,7 @@ body::-webkit-scrollbar-thumb {
   position: sticky;
   top: 0;
   background: var(--theme-color);
-  margin-top: -30px;
+  margin-top: -40px;
   margin-bottom: 15vh;
   border-bottom: 1px solid var(--theme-border-color);
 }
@@ -335,8 +336,8 @@ body::-webkit-scrollbar-thumb {
   width: 120%;
   height: 100%;
   background: linear-gradient(to right, transparent 0%, var(--theme-background) 15%, var(--theme-background) 100%);
-  -webkit-animation: text-reveal 4s ease forwards;
-          animation: text-reveal 4s ease forwards;
+  -webkit-animation: text-reveal 3s ease forwards;
+          animation: text-reveal 3s ease forwards;
 }
 
 @-webkit-keyframes text-reveal {
@@ -391,10 +392,9 @@ body::-webkit-scrollbar-thumb {
 .visual-div {
   display: flex;
   opacity: 0;
-  width: 80vw;
-  justify-content: space-evenly;
+  margin: auto;
+  gap: 5vw;
   transition: all 1s ease-out;
-  margin: 0 auto;
 }
 .visual-div.show {
   opacity: 1;
@@ -423,15 +423,17 @@ body::-webkit-scrollbar-thumb {
   place-items: center;
 }
 .visual-div#image-div {
-  margin-bottom: 30vh;
+  width: 55vw;
+  justify-content: left;
+  margin: 0 auto;
+  margin-bottom: 20vh;
 }
 .visual-div #image-container {
   transform: translateX(-10%);
 }
 .visual-div #image-container #home-image {
   position: relative;
-  width: calc(200px + 20vmin);
-  height: auto;
+  width: calc(100px + 20vmin);
   border-radius: var(--theme-border-radius);
 }
 .visual-div #image-container:hover #home-image {
@@ -442,12 +444,14 @@ body::-webkit-scrollbar-thumb {
 }
 .visual-div#video-div {
   flex-direction: row-reverse;
+  width: 80vw;
+  justify-content: center;
 }
 .visual-div #video-container {
   transform: translateX(10%);
 }
 .visual-div #video-container #home-video {
-  width: 45vw;
+  width: calc(300px + 50vmin);
   border-radius: var(--theme-border-radius);
 }
 .visual-div #video-container:hover #home-video {
@@ -462,8 +466,7 @@ body::-webkit-scrollbar-thumb {
 
 #about h2 {
   text-align: left;
-  margin: 0 30px;
-  margin-bottom: 15px;
+  margin: 0 30px 15px 30px;
 }
 #about .back-div {
   text-align: left;
@@ -473,8 +476,8 @@ body::-webkit-scrollbar-thumb {
   border-bottom: 1px solid var(--theme-border-color);
   margin-top: 10px;
 }
-#about p#about-me {
-  line-height: 60px;
+#about .back-div #about-me {
+  line-height: 3rem;
   text-align: left;
 }
 
@@ -484,6 +487,12 @@ body::-webkit-scrollbar-thumb {
 #contact h2 {
   margin-bottom: 5vh;
 }
+#contact #contact-divider {
+  border-top: 1px solid var(--theme-border-color);
+  width: var(--theme-back-div-width);
+  max-width: var(--theme-back-div-max-width);
+  margin: auto;
+}
 #contact a {
   color: #1f6feb;
   text-decoration: underline;
@@ -492,15 +501,20 @@ body::-webkit-scrollbar-thumb {
   color: #58a6ff;
 }
 #contact .back-div {
-  width: var(--theme-back-div-width);
-  text-align: center;
-  margin: auto;
+  display: flex;
+  justify-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: var(--theme-back-div);
 }
+#contact .back-div .contact-key {
+  white-space: nowrap;
+}
+#contact .back-div .contact-value {
+  word-break: break-all;
+}
 #contact #first-back-div {
-  border-top: 1px solid var(--theme-border-color);
+  background-color: var(--theme-back-div);
 }
 #contact #second-back-div {
   background-color: var(--theme-background);
@@ -682,13 +696,14 @@ body::-webkit-scrollbar-thumb {
   font-size: calc(7px + 1vmin);
 }
 
+@media only screen and (max-width: 720px) {
+  .navbar {
+    margin-top: -15px;
+  }
+}
 @media only screen and (max-width: 640px) {
   #title {
     margin: 15px 0 16px 15px;
-  }
-
-  .navbar {
-    margin-top: -15px;
   }
 
   .greeting-element {
@@ -702,6 +717,26 @@ body::-webkit-scrollbar-thumb {
   }
   #home .visual-word {
     display: block;
+  }
+  #home .visual-div#image-div {
+    width: 80vw;
+  }
+  #home .visual-div#image-div #home-image {
+    width: 50vw;
+  }
+  #home .visual-div#image-div .visual-text {
+    text-align: left;
+  }
+  #home .visual-div#video-div {
+    flex-direction: column;
+    width: 80vw;
+  }
+  #home .visual-div#video-div #home-video {
+    width: 100%;
+  }
+
+  #about .back-div {
+    padding: 2vh;
   }
 
   .footer {

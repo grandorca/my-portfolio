@@ -64,6 +64,10 @@ const App = () => {
 
       document.documentElement.style.setProperty(
         "--theme-back-div-width",
+        "80vw"
+      );
+      document.documentElement.style.setProperty(
+        "--theme-back-div-max-width",
         "400px"
       );
       document.documentElement.style.setProperty(
@@ -101,6 +105,10 @@ const App = () => {
 
       document.documentElement.style.setProperty(
         "--theme-back-div-width",
+        "auto"
+      );
+      document.documentElement.style.setProperty(
+        "--theme-back-div-max-width",
         "auto"
       );
       document.documentElement.style.setProperty(

@@ -15,25 +15,40 @@ const Contact = (props) => {
     <div className="main" id="contact">
       <h2>Contact Info</h2>
 
+      <div id="contact-divider"></div>
+
       <div className="back-div" id="first-back-div">
         <p>
-          <i className="bx bx-current-location"></i>Location: Winnipeg, MB
-          Canada
+          <span className="contact-key">
+            <i className="bx bx-current-location"></i>Location:&nbsp;
+          </span>
+          <span className="contact-value">Winnipeg, MB Canada</span>
         </p>
       </div>
 
       <div className="back-div" id="second-back-div">
         <p>
-          <i className={`bx bx${icon}-envelope`}></i> Email:&nbsp;
-          <a href="mailto:moohka@hotmail.com">moohka@hotmail.com </a>
+          <span className="contact-key">
+            <i className={`bx bx${icon}-envelope`}></i> Email:&nbsp;
+          </span>
+          <a className="contact-value" href="mailto:moohka@hotmail.com">
+            moohka@hotmail.com{" "}
+          </a>
         </p>
       </div>
 
       <div className="back-div" id="last-back-div">
         <p>
-          <i className="bx bxl-github"></i>
-          GitHub:&nbsp;
-          <a href="http://github.com/moohka" target="_blank" rel="noreferrer">
+          <span className="contact-key">
+            <i className="bx bxl-github"></i>
+            GitHub:&nbsp;
+          </span>
+          <a
+            className="contact-value"
+            href="http://github.com/moohka"
+            target="_blank"
+            rel="noreferrer"
+          >
             moohka
           </a>
         </p>

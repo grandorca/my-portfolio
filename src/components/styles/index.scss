@@ -10,6 +10,7 @@
   --theme-back-div: #232323;
   --theme-front-div: #1a1a1a;
   --theme-back-div-width: auto;
+  --theme-back-div-max-width: auto;
   --theme-color: #181818;
   --theme-color-plus: #111111;
   --theme-less-color: #c8c8c8;
@@ -136,7 +137,7 @@ body {
   position: sticky;
   top: 0;
   background: var(--theme-color);
-  margin-top: -30px;
+  margin-top: -40px;
   margin-bottom: 15vh;
   border-bottom: 1px solid var(--theme-border-color);
 }
@@ -294,7 +295,7 @@ body {
       var(--theme-background) 15%,
       var(--theme-background) 100%
     );
-    animation: text-reveal 4s ease forwards;
+    animation: text-reveal 3s ease forwards;
   }
 }
 @keyframes text-reveal {
@@ -343,10 +344,9 @@ body {
 .visual-div {
   display: flex;
   opacity: 0;
-  width: 80vw;
-  justify-content: space-evenly;
+  margin: auto;
+  gap: 5vw;
   transition: all 1s ease-out;
-  margin: 0 auto;
 
   &.show {
     opacity: 1;
@@ -376,15 +376,17 @@ body {
   }
   //image
   &#image-div {
-    margin-bottom: 30vh;
+    width: 55vw;
+    justify-content: left;
+    margin: 0 auto;
+    margin-bottom: 20vh;
   }
-  & #image-container {
+  & #image-container { 
     transform: translateX(-10%);
 
     & #home-image {
       position: relative;
-      width: calc(200px + 20vmin);
-      height: auto;
+      width: calc(100px + 20vmin);
       border-radius: var(--theme-border-radius);
     }
     &:hover #home-image {
@@ -397,12 +399,14 @@ body {
   //video
   &#video-div {
     flex-direction: row-reverse;
+    width: 80vw;
+    justify-content: center;
   }
   & #video-container {
     transform: translateX(10%);
 
     & #home-video {
-      width: 45vw;
+      width: calc(300px + 50vmin);
       border-radius: var(--theme-border-radius);
     }
     &:hover #home-video {
@@ -421,8 +425,7 @@ body {
 #about {
   & h2 {
     text-align: left;
-    margin: 0 30px;
-    margin-bottom: 15px;
+    margin: 0 30px 15px 30px;
   }
   & .back-div {
     text-align: left;
@@ -431,10 +434,11 @@ body {
     border-top: 1px solid var(--theme-border-color);
     border-bottom: 1px solid var(--theme-border-color);
     margin-top: 10px;
-  }
-  & p#about-me {
-    line-height: 60px;
-    text-align: left;
+
+    & #about-me {
+      line-height: 3rem;
+      text-align: left;
+    }
   }
 }
 //Contact
@@ -442,6 +446,12 @@ body {
   text-align: center;
   & h2 {
     margin-bottom: 5vh;
+  }
+  & #contact-divider {
+    border-top: 1px solid var(--theme-border-color);
+    width: var(--theme-back-div-width);
+    max-width: var(--theme-back-div-max-width);
+    margin: auto;
   }
   & a {
     color: #1f6feb;
@@ -451,15 +461,20 @@ body {
     color: #58a6ff;
   }
   & .back-div {
-    width: var(--theme-back-div-width);
-    text-align: center;
-    margin: auto;
+    display: flex;
+    justify-content: center;
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: var(--theme-back-div);
+    & .contact-key {
+      white-space: nowrap;
+    }
+    & .contact-value {
+      word-break: break-all;
+    }
   }
   & #first-back-div {
-    border-top: 1px solid var(--theme-border-color);
+    background-color: var(--theme-back-div);
   }
   & #second-back-div {
     background-color: var(--theme-background);
@@ -604,26 +619,56 @@ body {
   }
 }
 //general-mobile
+@media only screen and (max-width: 720px) {
+  .navbar {
+    margin-top: -15px;
+  }
+}
 @media only screen and (max-width: 640px) {
   //navbar
   #title {
     margin: 15px 0 16px 15px;
-  }
-  .navbar {
-    margin-top: -15px;
   }
   .greeting-element {
     display: block;
   }
   //home
   #home {
+    //skill-sets
     & .back-div {
       flex-direction: column;
       align-items: center;
       gap: 8vh;
     }
+    //visuals
     & .visual-word {
       display: block;
+    }
+    & .visual-div {
+      //image
+      &#image-div {
+        width: 80vw;
+        & #home-image {
+          width:50vw;
+        }
+        & .visual-text{
+          text-align: left;
+        }
+      }
+      //video
+      &#video-div {
+        flex-direction: column;
+        width: 80vw;
+        & #home-video {
+          width: 100%;
+        }
+      }
+    }
+  }
+  //about
+  #about {
+    & .back-div {
+      padding: 2vh;
     }
   }
   //footer
