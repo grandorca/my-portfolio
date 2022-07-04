@@ -43,9 +43,9 @@ const Home = (props) => {
       </div>
 
       <div className="back-div">
-        <div className="back-sub-div">
-          <h4 className="sub-div-title">Development Tools</h4>
-          <ul className="list-container">
+        <div className="back-div-sub">
+          <h4 className="back-div-sub-title">Development Tools</h4>
+          <ul className="list-container" id="tool-container">
             {tools.map((tool) => {
               return (
                 <li key={tool} className="list-element">
@@ -56,9 +56,9 @@ const Home = (props) => {
           </ul>
         </div>
 
-        <div className="back-sub-div">
-          <h4 className="sub-div-title">Programming Langauges</h4>
-          <ul className="list-container">
+        <div className="back-div-sub">
+          <h4 className="back-div-sub-title">Programming Langauges</h4>
+          <ul className="list-container" id="lang-container">
             {languages.map((lang) => {
               return (
                 <li key={lang} className="list-element">
@@ -76,7 +76,7 @@ const Home = (props) => {
           <span className="citation">Photo by Alexander Kozlov</span>
         </div>
 
-        <div className="visual-text">
+        <div className="text-container">
           <p className="visual-line">
             <span className="visual-word">Efficient,&nbsp;</span>Concise and
             structured coding.
@@ -97,7 +97,7 @@ const Home = (props) => {
           <span className="citation">Video by Nothing Ahead from Pexels</span>
         </div>
 
-        <div className="visual-text">
+        <div className="text-container">
           <p className="visual-line">
             <span className="visual-word">Dynamic,&nbsp;</span>make static page
             comes to life
