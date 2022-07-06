@@ -446,6 +446,7 @@ body {
     margin-top: 10px;
 
     & #about-me {
+      // text-decoration: overline;
       line-height: 3rem;
       text-align: left;
     }
@@ -502,7 +503,7 @@ body {
     font-size: larger;
     position: relative;
     bottom: 0;
-    animation: blink 2.5s linear infinite;
+    animation: blink 3s linear infinite;
   }
 }
 @keyframes blink {
@@ -604,9 +605,6 @@ body {
 }
 .next-button:active {
   transform: scale(0.93);
-  & .next-text.dark {
-    color: blue;
-  }
 }
 //NotFound
 #not-found {

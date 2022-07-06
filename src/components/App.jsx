@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     let location =
       pathname === "/" ? "Home" : pathname === "/about" ? "About" : "Contact";
-    document.title = "My Portfolio | " + location;
+    document.title = "Moohyun Kang | " + location;
   }, [pathname]);
 
   //theme-change

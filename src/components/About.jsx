@@ -7,18 +7,18 @@ const About = (props) => {
 
       <div className="back-div">
         <p id="about-me">
-          &nbsp;Initially, I studied aviation in Providence UC. and start over
-          with computer science.
+          &nbsp;Initially, I studied aviation in Providence UC. However, I felt
+          that it was not for me. I droped out of the school during Covid time
+          and looked for other career path. And I came across with Computer
+          Science.
           <br></br>
-          &nbsp;I finished certificate program, Software Development in Red
-          River College. I learned general computer science, database(SQL) and
-          Java. However, I found my interest in Web Development even thought it
-          was not part of the curriculum. I self taught HTML, CSS, JavaScript
-          and React.
+          &nbsp;I was enrolled in certificate program, Software Development, offered
+          by Red River College. I learned general computer science, relational
+          database(SQL) and Java. During the learing, I found my interest in Web
+          Development.
           <br></br>
-          &nbsp;I'm excited to make the leap and continue refining my skills
-          with the right company. Drop me a line and/or check me out
-          at:experiences for a variety of clients.
+          &nbsp;I'm looking forward to make the leap and continue refining my
+          skills with the right company.
         </p>
       </div>
 
