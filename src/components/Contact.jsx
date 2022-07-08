@@ -32,7 +32,23 @@ const Contact = (props) => {
             <i className={`bx bx${icon}-envelope`}></i> Email:&nbsp;
           </span>
           <a className="contact-value" href="mailto:moohka@hotmail.com">
-            moohka@hotmail.com{" "}
+            moohka@hotmail.com
+          </a>
+        </p>
+      </div>
+
+      <div className="back-div" id="third-back-div">
+        <p>
+          <span className="contact-key">
+            <i className="bx bxl-codepen"></i> CodePen:&nbsp;
+          </span>
+          <a
+            className="contact-value"
+            href="https://codepen.io/moohka"
+            target="_blank"
+            rel="noreferrer"
+          >
+            @moohka
           </a>
         </p>
       </div>
@@ -45,7 +61,7 @@ const Contact = (props) => {
           </span>
           <a
             className="contact-value"
-            href="http://github.com/moohka"
+            href="https://github.com/moohka"
             target="_blank"
             rel="noreferrer"
           >

@@ -490,8 +490,11 @@ body {
   & #second-back-div {
     background-color: var(--theme-background);
   }
-  & #last-back-div {
+  & #third-back-dliv{
     background-color: var(--theme-back-div);
+  }
+  & #last-back-div {
+    background-color: var(--theme-background);
     margin-bottom: 26vh;
   }
   & i {

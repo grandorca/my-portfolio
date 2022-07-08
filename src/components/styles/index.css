@@ -529,8 +529,11 @@ body::-webkit-scrollbar-thumb {
 #contact #second-back-div {
   background-color: var(--theme-background);
 }
-#contact #last-back-div {
+#contact #third-back-dliv {
   background-color: var(--theme-back-div);
+}
+#contact #last-back-div {
+  background-color: var(--theme-background);
   margin-bottom: 26vh;
 }
 #contact i {
@@ -542,8 +545,8 @@ body::-webkit-scrollbar-thumb {
   font-size: larger;
   position: relative;
   bottom: 0;
-  -webkit-animation: blink 2.5s linear infinite;
-          animation: blink 2.5s linear infinite;
+  -webkit-animation: blink 3s linear infinite;
+          animation: blink 3s linear infinite;
 }
 
 @-webkit-keyframes blink {
@@ -680,9 +683,6 @@ body::-webkit-scrollbar-thumb {
 }
 .next-button:active {
   transform: scale(0.93);
-}
-.next-button:active .next-text.dark {
-  color: blue;
 }
 
 #not-found {
