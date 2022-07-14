@@ -17,7 +17,7 @@ const App = () => {
   //dynamic-title
   useEffect(() => {
     let location =
-      pathname === "/"||"" ? "Home" : pathname === "/about" ? "About" : "Contact";
+      pathname === "/" ? "Home" : pathname === "/about" ? "About" : "Contact";
     document.title = "Moohyun Kang | " + location;
   }, [pathname]);
 

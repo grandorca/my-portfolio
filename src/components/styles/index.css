@@ -162,11 +162,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
   }
 }
-.next-anchor {
-  display: block;
-  margin: 0 auto;
-}
-
 .next-button {
   position: relative;
   display: block;
@@ -577,13 +572,12 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-#about {
-  text-align: left;
-}
 #about .main-header {
-  margin: 0 0 15px 30px;
+  text-align: left;
+  margin: 15px 30px;
 }
 #about .back-div {
+  text-align: left;
   padding: 4vh;
   background-color: var(--theme-back-div);
   border-top: var(--theme-border);
@@ -777,21 +771,26 @@ body::-webkit-scrollbar-thumb {
 }
 
 .not-footer {
-  min-height: 86vh;
+  min-height: 85vh;
 }
 
 .footer {
-  margin-top: 7vh;
-  height: 11vh;
-  padding: 2vh 2vw;
+  margin-top: 6vh;
+  height: 9vh;
+  display: flex;
+  justify-content: right;
+  gap: 0 0;
+  align-items: top;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  flex-wrap: wrap;
+  padding: 2vh 3vw;
   bottom: 0;
   background-color: var(--theme-color);
   border-top: var(--theme-border);
-  display: flex;
-  justify-content: right;
-  flex-wrap: wrap;
 }
 .footer .footer-element {
+  display: inline;
   text-decoration: none;
   margin-left: 40px;
   font-size: large;
@@ -851,7 +850,7 @@ body::-webkit-scrollbar-thumb {
   }
   .footer {
     justify-content: center;
-    padding: 1vh 2vw 0 2vw;
+    padding: 2vh 0;
   }
   .footer .footer-element {
     margin: 0 20px;
