@@ -17,7 +17,8 @@ const About = (props) => {
           &nbsp;I enrolled into a certificate program, Software Development,
           offered by Red River College. I learned general computer science,
           relational database (SQL) and Java. During the learning, I found my
-          interest in Web Development. So, I learned it on my own.
+          interest in Web Development. So, I continued studying on that field on
+          my own.
           <br></br>
           &nbsp;I'm looking forward to make the leap and continue refining my
           skills with the right company.

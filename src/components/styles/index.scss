@@ -604,7 +604,7 @@ body {
         }
         //placholder-effect
         &::placeholder {
-          transition: all ease 0.5s;
+          transition: all ease-in 1s;
         }
         &:focus {
           outline: none;
@@ -612,7 +612,7 @@ body {
           border-bottom: var(--theme-border);
           &::placeholder {
             color: transparent;
-            transition: all ease 0.5;
+            transition: all ease 0.3s;
           }
         }
         //end of placeholder-effect

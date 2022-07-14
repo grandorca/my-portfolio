@@ -664,15 +664,15 @@ body::-webkit-scrollbar-thumb {
   border: var(--theme-border);
 }
 #contact .contact-form .form-element .form-input::-moz-placeholder {
-  -moz-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  -moz-transition: all ease-in 1s;
+  transition: all ease-in 1s;
 }
 #contact .contact-form .form-element .form-input:-ms-input-placeholder {
-  -ms-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  -ms-transition: all ease-in 1s;
+  transition: all ease-in 1s;
 }
 #contact .contact-form .form-element .form-input::placeholder {
-  transition: all ease 0.5s;
+  transition: all ease-in 1s;
 }
 #contact .contact-form .form-element .form-input:focus {
   outline: none;
@@ -681,17 +681,17 @@ body::-webkit-scrollbar-thumb {
 }
 #contact .contact-form .form-element .form-input:focus::-moz-placeholder {
   color: transparent;
-  -moz-transition: all ease 0.5;
-  transition: all ease 0.5;
+  -moz-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 #contact .contact-form .form-element .form-input:focus:-ms-input-placeholder {
   color: transparent;
-  -ms-transition: all ease 0.5;
-  transition: all ease 0.5;
+  -ms-transition: all ease 0.3s;
+  transition: all ease 0.3s;
 }
 #contact .contact-form .form-element .form-input:focus::placeholder {
   color: transparent;
-  transition: all ease 0.5;
+  transition: all ease 0.3s;
 }
 #contact .contact-form .form-element .form-input:not(:-moz-placeholder-shown) {
   border-bottom: var(--theme-border);
