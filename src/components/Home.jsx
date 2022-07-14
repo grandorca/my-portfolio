@@ -27,7 +27,7 @@ const Home = (props) => {
 
   return (
     <div className="main" id="home">
-      <h2 className="heading">Web Developer</h2>
+      <h2 className="heading">Web Developer, Programmer</h2>
 
       <div className="message-div">
         <p className={`greeting ${props.loading}`}>
