@@ -21,7 +21,7 @@ const App = () => {
         ? " | Home"
         : pathname === "/my-portfolio/about"
         ? " | About"
-        : pathname === "/my-portfolio/about"
+        : pathname === "/my-portfolio/contact"
         ? " | Contact"
         : "";
     document.title = "Moohyun Kang" + location;
