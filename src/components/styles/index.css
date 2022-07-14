@@ -162,9 +162,15 @@ body::-webkit-scrollbar-thumb {
     opacity: 0;
   }
 }
-.next-button {
+.next-anchor {
   display: block;
+  margin: 0 auto;
+}
+
+.next-button {
   position: relative;
+  display: block;
+  margin: 0 auto;
   margin-top: 140px;
   width: 88px;
   height: 49px;
@@ -571,12 +577,13 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-#about .main-header {
+#about {
   text-align: left;
+}
+#about .main-header {
   margin: 0 0 15px 30px;
 }
 #about .back-div {
-  text-align: left;
   padding: 4vh;
   background-color: var(--theme-back-div);
   border-top: var(--theme-border);
@@ -585,7 +592,6 @@ body::-webkit-scrollbar-thumb {
 }
 #about .back-div #about-me {
   line-height: 3rem;
-  text-align: left;
 }
 
 #contact {
@@ -765,6 +771,8 @@ body::-webkit-scrollbar-thumb {
   }
 }
 #not-found {
+  display: block;
+  text-align: center;
   margin-top: 20vh;
 }
 
@@ -774,7 +782,7 @@ body::-webkit-scrollbar-thumb {
 
 .footer {
   margin-top: 7vh;
-  min-height: 7vh;
+  height: 11vh;
   padding: 2vh 2vw;
   bottom: 0;
   background-color: var(--theme-color);

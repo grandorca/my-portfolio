@@ -127,9 +127,14 @@ body {
   }
 }
 //next-button
+.next-anchor{
+  display:block;
+  margin:0 auto;
+}
 .next-button {
-  display: block;
   position: relative;
+  display:block;
+  margin: 0 auto;
   margin-top: 140px;
   width: 88px;
   height: 49px;
@@ -219,7 +224,7 @@ body {
   text-align: left;
 }
 #title {
-  position: relative;
+  position: relative;//hover over navbar
   margin: 15px 0 16px 30px;
   display: inline-block;
   z-index: 100;
@@ -515,21 +520,18 @@ body {
 }
 //About
 #about {
+  text-align: left;
   & .main-header {
-    text-align: left;
     margin: 0 0 15px 30px;
   }
   & .back-div {
-    text-align: left;
     padding: 4vh;
     background-color: var(--theme-back-div);
     border-top: var(--theme-border);
     border-bottom: var(--theme-border);
     margin-top: 10px;
-
     & #about-me {
       line-height: 3rem;
-      text-align: left;
     }
   }
 }
@@ -664,6 +666,8 @@ body {
 }
 //NotFound
 #not-found {
+  display:block;
+  text-align: center;
   margin-top: 20vh;
 }
 //Footer
@@ -671,8 +675,9 @@ body {
   min-height: 86vh;
 }
 .footer {
+
   margin-top: 7vh;
-  min-height: 7vh;
+  height: 11vh;
   padding: 2vh 2vw;
   bottom: 0;
   background-color: var(--theme-color);
