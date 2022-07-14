@@ -18,11 +18,13 @@ const App = () => {
   useEffect(() => {
     let location =
       pathname === "/my-portfolio/"
-        ? "Home"
+        ? " | Home"
         : pathname === "/my-portfolio/about"
-        ? "About"
-        : "Contact";
-    document.title = "Moohyun Kang | " + location;
+        ? " | About"
+        : pathname === "/my-portfolio/about"
+        ? " | Contact"
+        : "";
+    document.title = "Moohyun Kang" + location;
   }, [pathname]);
 
   //theme-change
@@ -135,7 +137,7 @@ const App = () => {
           />
           <Route path="/my-portfolio/about" element={<About theme={theme} />} />
           <Route path="/my-portfolio/contact" element={<Contact />} />
-          <Route path={["/*", "/my-portfolio/*"]} element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>
 

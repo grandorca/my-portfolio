@@ -767,7 +767,6 @@ body::-webkit-scrollbar-thumb {
 #not-found {
   display: block;
   text-align: center;
-  margin-top: 20vh;
 }
 
 .not-footer {
@@ -779,12 +778,11 @@ body::-webkit-scrollbar-thumb {
   height: 9vh;
   display: flex;
   justify-content: right;
-  gap: 0 0;
   align-items: top;
-  -moz-column-gap: 0;
-       column-gap: 0;
   flex-wrap: wrap;
   padding: 2vh 3vw;
+  -moz-column-gap: 35px;
+       column-gap: 35px;
   bottom: 0;
   background-color: var(--theme-color);
   border-top: var(--theme-border);
@@ -792,7 +790,6 @@ body::-webkit-scrollbar-thumb {
 .footer .footer-element {
   display: inline;
   text-decoration: none;
-  margin-left: 40px;
   font-size: large;
 }
 .footer #copyright {

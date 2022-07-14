@@ -665,7 +665,6 @@ body {
 #not-found {
   display: block;
   text-align: center;
-  margin-top: 20vh;
 }
 //Footer
 .not-footer {
@@ -676,19 +675,16 @@ body {
   height: 9vh;
   display: flex;
   justify-content: right;
-  gap: 0 0;
   align-items: top;
-  column-gap: 0;
   flex-wrap: wrap;
   padding: 2vh 3vw;
+  column-gap:35px;
   bottom: 0;
   background-color: var(--theme-color);
   border-top: var(--theme-border);
-
   & .footer-element {
     display: inline;
     text-decoration: none;
-    margin-left: 40px;
     font-size: large;
   }
   & #copyright {
