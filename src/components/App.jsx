@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Header";
+import Header from "./HeaderNavbar";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -38,19 +38,23 @@ const App = () => {
       //light-theme
       document.documentElement.style.setProperty(
         "--theme-background",
-        "#fcfcfc"
+        "#f6f6f6"
       );
-      document.documentElement.style.setProperty("--theme-color", "#fcfcfc");
-      document.documentElement.style.setProperty("--theme-back-div", "#fcfcfc");
+      document.documentElement.style.setProperty("--theme-color", "#f6f6f6");
+      document.documentElement.style.setProperty("--theme-back-div", "#f6f6f6");
       document.documentElement.style.setProperty(
         "--theme-front-div",
-        "#fcfcfc"
+        "#f6f6f6"
       );
       document.documentElement.style.setProperty("--theme-font", "#000000");
       document.documentElement.style.setProperty("--theme-font-sub", "#5C5C5C");
       document.documentElement.style.setProperty(
-        "--theme-border-color",
-        "#000000"
+        "--theme-border",
+        "1px solid #212121"
+      );
+      document.documentElement.style.setProperty(
+        "--theme-border-dim",
+        "1px solid #bbb"
       );
       document.documentElement.style.setProperty(
         "--theme-border-radius",
@@ -61,15 +65,7 @@ const App = () => {
         "georgia"
       );
       document.documentElement.style.setProperty("--theme-switch", "left");
-
-      document.documentElement.style.setProperty(
-        "--theme-back-div-width",
-        "80vw"
-      );
-      document.documentElement.style.setProperty(
-        "--theme-back-div-max-width",
-        "400px"
-      );
+      document.documentElement.style.setProperty("--contact-divider", "block");
       document.documentElement.style.setProperty(
         "--theme-scrollbar",
         "#0f0f0f"
@@ -79,7 +75,7 @@ const App = () => {
       //dark-theme
       document.documentElement.style.setProperty(
         "--theme-background",
-        "#1e1e1e"
+        "#1c1c1c"
       );
       document.documentElement.style.setProperty("--theme-back-div", "#232323");
       document.documentElement.style.setProperty(
@@ -89,10 +85,8 @@ const App = () => {
       document.documentElement.style.setProperty("--theme-color", "#181818");
       document.documentElement.style.setProperty("--theme-font", "#ffffff");
       document.documentElement.style.setProperty("--theme-font-sub", "#c8c8c8");
-      document.documentElement.style.setProperty(
-        "--theme-border-color",
-        "#212121"
-      );
+      document.documentElement.style.setProperty("--theme-border", "none");
+      document.documentElement.style.setProperty("--theme-border-dim", "none");
       document.documentElement.style.setProperty(
         "--theme-border-radius",
         "10px"
@@ -102,15 +96,7 @@ const App = () => {
         "arial"
       );
       document.documentElement.style.setProperty("--theme-switch", "right");
-
-      document.documentElement.style.setProperty(
-        "--theme-back-div-width",
-        "auto"
-      );
-      document.documentElement.style.setProperty(
-        "--theme-back-div-max-width",
-        "auto"
-      );
+      document.documentElement.style.setProperty("--contact-divider", "none");
       document.documentElement.style.setProperty(
         "--theme-scrollbar",
         "#3d3d3d"
@@ -141,11 +127,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home theme={theme} loading={loading} />} />
           <Route path="/about" element={<About theme={theme} />} />
-          <Route path="/contact" element={<Contact theme={theme} />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-      <Footer></Footer>
+
+      <Footer theme={theme}></Footer>
     </>
   );
 };

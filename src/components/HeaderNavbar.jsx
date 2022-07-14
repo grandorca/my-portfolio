@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
@@ -23,6 +23,7 @@ const Header = (props) => {
     handleResize();
     window.addEventListener("resize", handleResize);
   });
+
   //dropdown-display & change-for-mobile
   function themeDown() {
     let currentValue = getComputedStyle(
@@ -30,7 +31,7 @@ const Header = (props) => {
     ).getPropertyValue("--display-dropdown");
 
     if (window.innerWidth < 640) {
-      if (props.theme == "dark") {
+      if (props.theme === "dark") {
         props.changeTheme("light");
       } else {
         props.changeTheme("dark");
@@ -57,6 +58,7 @@ const Header = (props) => {
       <header className="page-header">
         <h1 id="title">Moohyun Kang</h1>
       </header>
+      
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-item">
