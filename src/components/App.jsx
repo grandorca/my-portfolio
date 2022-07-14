@@ -135,7 +135,7 @@ const App = () => {
           />
           <Route path="/my-portfolio/about" element={<About theme={theme} />} />
           <Route path="/my-portfolio/contact" element={<Contact />} />
-          <Route path="/my-portfolio/*" element={<NotFound />} />
+          <Route path={["/*", "/my-portfolio/*"]} element={<NotFound />} />
         </Routes>
       </div>
 
