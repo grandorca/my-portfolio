@@ -105,7 +105,7 @@ const Home = (props) => {
         </div>
       </div>
 
-      <Link className="next-anchor" to="/about">
+      <Link className="next-anchor" to="./my-portfolio/about">
         <button className={`next-button ${props.theme}`}>
           <p className={`next-text ${props.theme}`}>Next</p>
         </button>
