@@ -25,7 +25,7 @@ const About = (props) => {
         </p>
       </div>
 
-      <Link className="next-anchor" to="./my-portfolio/contact">
+      <Link className="next-anchor" to="/contact">
         <button className={`next-button ${props.theme}`}>
           <p className={`next-text ${props.theme}`}>Next</p>
         </button>

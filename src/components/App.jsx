@@ -17,11 +17,11 @@ const App = () => {
   //dynamic-title
   useEffect(() => {
     let location =
-      pathname === "/my-portfolio/"
+      pathname === "/"
         ? " | Home"
-        : pathname === "/my-portfolio/about"
+        : pathname === "/about"
         ? " | About"
-        : pathname === "/my-portfolio/contact"
+        : pathname === "/contact"
         ? " | Contact"
         : "";
     document.title = "Moohyun Kang" + location;
@@ -132,11 +132,11 @@ const App = () => {
         <Header theme={theme} changeTheme={setTheme}></Header>
         <Routes>
           <Route
-            path="/my-portfolio"
+            path=""
             element={<Home theme={theme} loading={loading} />}
           />
-          <Route path="/my-portfolio/about" element={<About theme={theme} />} />
-          <Route path="/my-portfolio/contact" element={<Contact />} />
+          <Route path="/about" element={<About theme={theme} />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>

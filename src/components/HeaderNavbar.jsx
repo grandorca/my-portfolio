@@ -62,13 +62,13 @@ const Header = (props) => {
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-item">
-            <Link to="./my-portfolio/">Home</Link>
+            <Link to="./">Home</Link>
           </li>
           <li className="navbar-item">
-            <Link to="./my-portfolio/about">About</Link>
+            <Link to="./about">About</Link>
           </li>
           <li className="navbar-item">
-            <Link to="./my-portfolio/contact">Contact</Link>
+            <Link to="./contact">Contact</Link>
           </li>
           <div
             className="navbar-item"
