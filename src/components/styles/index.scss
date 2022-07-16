@@ -634,9 +634,10 @@ body {
       font-size: medium;
       &:hover {
         background-color: gray;
+        transition: all ease 0.2s;
       }
       &:active {
-        background-color: var(--theme-background);
+        background-color: lightgray;
       }
     }
   } //end of contact-form

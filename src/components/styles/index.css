@@ -723,9 +723,10 @@ body::-webkit-scrollbar-thumb {
 }
 #contact .contact-form #submit-input:hover {
   background-color: gray;
+  transition: all ease 0.2s;
 }
 #contact .contact-form #submit-input:active {
-  background-color: var(--theme-background);
+  background-color: lightgray;
 }
 #contact #thanks {
   font-size: larger;
