@@ -11,7 +11,7 @@ const About = (props) => {
           <br></br>
           &nbsp;Initially, I studied aviation in Providence UC. However, I felt
           that it was not for me. I dropped out of the school during Covid time
-          and looked for different career path. And I came across with Computer
+          and looked for different career path. Then I came across with Computer
           Science.
           <br></br>
           &nbsp;I enrolled into a certificate program, Software Development,

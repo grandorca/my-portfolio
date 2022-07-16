@@ -723,10 +723,11 @@ body::-webkit-scrollbar-thumb {
 }
 #contact .contact-form #submit-input:hover {
   background-color: gray;
-  transition: all ease 0.2s;
+  transition: all ease 0.9s;
 }
 #contact .contact-form #submit-input:active {
   background-color: lightgray;
+  transition: none;
 }
 #contact #thanks {
   font-size: larger;

@@ -634,10 +634,11 @@ body {
       font-size: medium;
       &:hover {
         background-color: gray;
-        transition: all ease 0.2s;
+        transition: all ease 0.9s;
       }
       &:active {
         background-color: lightgray;
+        transition:none;
       }
     }
   } //end of contact-form
@@ -683,11 +684,13 @@ body {
   bottom: 0;
   background-color: var(--theme-color);
   border-top: var(--theme-border);
+
   & .footer-element {
     display: inline;
     text-decoration: none;
     font-size: large;
   }
+
   & #copyright {
     display: block;
     width: 100%;

@@ -32,14 +32,14 @@ const ContactForm = ()=>{
             <textarea
               className="form-input"
               id="textarea-input"
-              placeholder="How can I help you?"
+              placeholder="Your Message"
               badinput="false"
               maxLength="500"
               name="Message"
               required
             ></textarea>
             <label className="form-label" id="textarea-label">
-              How can I help you?
+              Your Message
             </label>
           </div>
 
