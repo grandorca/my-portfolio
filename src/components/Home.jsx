@@ -7,6 +7,7 @@ const Home = (props) => {
   //scroll-effect
   const imgRef = useRef();
   const vidRef = useRef();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
