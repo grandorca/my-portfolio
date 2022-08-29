@@ -2,4 +2,4 @@
 
 My first React app and portfolio.
 
-[Web Site](https://moohka.netlify.app)
+[Website](https://moohka.netlify.app)
